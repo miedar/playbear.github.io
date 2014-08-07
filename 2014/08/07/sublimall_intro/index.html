@@ -115,38 +115,38 @@ sublimall的网站是https://sublimall.org
 </code></pre><p>  正常显示:/usr/local/bin/7za</p>
 <p>4:打开sublimall的setting-users</p>
 <pre><code>{
-<span class="regexp">//////</span><span class="regexp">//////</span><span class="regexp">//////</span><span class="regexp">//////</span><span class="regexp">////
-///</span>/ Sublimall settings <span class="regexp">////
-///</span><span class="regexp">//////</span><span class="regexp">//////</span><span class="regexp">//////</span><span class="regexp">//////</span>/
+<span class="comment">////////////////////////////</span>
+<span class="comment">//// Sublimall settings ////</span>
+<span class="comment">////////////////////////////</span>
 <span class="string">"api_root_url"</span>: <span class="string">"http://sublimall.org"</span>,
 <span class="string">"api_upload_url"</span>: <span class="string">"/api/upload/"</span>,
 <span class="string">"api_retrieve_url"</span>: <span class="string">"/api/retrieve/"</span>,
-上面几行不用管
+<span class="comment">//上面几行不用管</span>
 
-<span class="regexp">//////</span><span class="regexp">//////</span><span class="regexp">//////</span><span class="regexp">/////
-///</span>/ User settings <span class="regexp">////
-///</span><span class="regexp">//////</span><span class="regexp">//////</span><span class="regexp">//////</span><span class="regexp">//</span>
+<span class="comment">///////////////////////</span>
+<span class="comment">//// User settings ////</span>
+<span class="comment">///////////////////////</span>
 <span class="string">"email"</span>: <span class="string">"roc100year@gmail.com"</span>,
-这里输入自己注册sublimall网站的邮箱
+<span class="comment">//这里输入自己注册sublimall网站的邮箱</span>
 <span class="string">"api_key"</span>: <span class="string">"xxxxxxxxxxxxxxxxxxxx"</span>,
-这里输入网站账户页面左下角api key给的一串数字和字母
-<span class="regexp">//</span> Paths must <span class="attribute">be</span>: <span class="string">"Packages/SublimeCodeIntel"</span> <span class="keyword">or</span> <span class="string">"Installed Packages/Sublimall"</span>
+<span class="comment">//这里输入网站账户页面左下角api key给的一串数字和字母</span>
+<span class="comment">// Paths must be: "Packages/SublimeCodeIntel" or "Installed Packages/Sublimall"</span>
 <span class="string">"ignore_packages"</span>: [],
-<span class="regexp">//</span> Set <span class="literal">true</span> <span class="keyword">if</span> you want to exclude packages managed <span class="keyword">by</span> Package Control
+<span class="comment">// Set true if you want to exclude packages managed by Package Control</span>
 <span class="string">"exclude_from_package_control"</span>: <span class="literal">false</span>,
-<span class="regexp">//</span> Set <span class="literal">false</span> <span class="keyword">if</span> you don<span class="string">'t want to encrypt your configuration
-"encrypt": true,
-// Upload timeout in seconds
-"http_upload_timeout": 120,
-// Download timeout in seconds
-"http_download_timeout": 120,
-// Path to 7zip executable, though Sublimall tries to find it out itself
-"7za_path": "/usr/local/bin/7za",
- 这里输入压缩软件所在的路径   
-// HTTP proxy to use for HTTP requests. Support for authentication
-// Examples: http://user:password@host:port or http://ip:port
-"http_proxy": ""
-}       </span>
+<span class="comment">// Set false if you don't want to encrypt your configuration</span>
+<span class="string">"encrypt"</span>: <span class="literal">true</span>,
+<span class="comment">// Upload timeout in seconds</span>
+<span class="string">"http_upload_timeout"</span>: <span class="number">120</span>,
+<span class="comment">// Download timeout in seconds</span>
+<span class="string">"http_download_timeout"</span>: <span class="number">120</span>,
+<span class="comment">// Path to 7zip executable, though Sublimall tries to find it out itself</span>
+<span class="string">"7za_path"</span>: <span class="string">"/usr/local/bin/7za"</span>,
+<span class="comment">//这里输入压缩软件所在的路径   </span>
+<span class="comment">// HTTP proxy to use for HTTP requests. Support for authentication</span>
+<span class="comment">// Examples: http://user:password@host:port or http://ip:port</span>
+<span class="string">"http_proxy"</span>: <span class="string">""</span>
+}       
 </code></pre><p> 5: 打开preferences—package setting—sublimall—upload有一个压缩密码的空白行出现,输入压缩包的密码或者直接打回车.等待压缩和上传就好了.<br> 6: sublimall—retrieve 是取回备份的个人配置.</p>
 
       
