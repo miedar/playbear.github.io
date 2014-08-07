@@ -87,7 +87,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2014/08/07/sublimall_intro/">sublime text3插件同步的插件Sublimall</a>
+      <a class="article-title" href="/2014/08/07/sublimall_intro/">sublime text3配置和插件同步的插件Sublimall</a>
     </h1>
   
 
@@ -95,7 +95,53 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>最近浏览v2ex网站发现了一款sublime text3的插件,名字叫sublimall,主要作用是备份sublime text3的所有插件.很适合我这样,经常折腾黑苹果,经常格式化硬盘的人.</p>
+<p>sublimall的网站是<a href="https://sublimall.org" target="_blank" rel="external">https://sublimall.org</a></p>
+<p>1: 点击绿色的sign up for free按钮,输入账号密码等信息后在自己邮箱里面收取验证邮件.</p>
+<p>2: 在自己账号页面(<a href="https://sublimall.org/account/),左下角是email和API" target="_blank" rel="external">https://sublimall.org/account/),左下角是email和API</a> key信息</p>
+<p>3: 通过package control安装sublimall插件.</p>
+<p>3: sublimall会将配置和插件打包发送到这个网站上,用的压缩软件是7zip,<br>因此需要安装7zip.</p>
+<p>  在终端输入:</p>
+<pre><code>     brew <span class="operator"><span class="keyword">install</span> p7zip</span>
+</code></pre><p>  安装完成后,再输入:</p>
+<pre><code>     <span class="keyword">where</span> <span class="keyword">is</span> <span class="number">7</span>za
+</code></pre><p>  正常显示:/usr/local/bin/7za</p>
+<p>4:打开sublimall的setting-users</p>
+<pre><code>{
+<span class="regexp">//////</span><span class="regexp">//////</span><span class="regexp">//////</span><span class="regexp">//////</span><span class="regexp">////
+///</span>/ Sublimall settings <span class="regexp">////
+///</span><span class="regexp">//////</span><span class="regexp">//////</span><span class="regexp">//////</span><span class="regexp">//////</span>/
+<span class="string">"api_root_url"</span>: <span class="string">"http://sublimall.org"</span>,
+<span class="string">"api_upload_url"</span>: <span class="string">"/api/upload/"</span>,
+<span class="string">"api_retrieve_url"</span>: <span class="string">"/api/retrieve/"</span>,
+上面几行不用管
+
+<span class="regexp">//////</span><span class="regexp">//////</span><span class="regexp">//////</span><span class="regexp">/////
+///</span>/ User settings <span class="regexp">////
+///</span><span class="regexp">//////</span><span class="regexp">//////</span><span class="regexp">//////</span><span class="regexp">//</span>
+<span class="string">"email"</span>: <span class="string">"roc100year@gmail.com"</span>,
+这里输入自己注册sublimall网站的邮箱
+<span class="string">"api_key"</span>: <span class="string">"xxxxxxxxxxxxxxxxxxxx"</span>,
+这里输入网站账户页面左下角api key给的一串数字和字母
+<span class="regexp">//</span> Paths must <span class="attribute">be</span>: <span class="string">"Packages/SublimeCodeIntel"</span> <span class="keyword">or</span> <span class="string">"Installed Packages/Sublimall"</span>
+<span class="string">"ignore_packages"</span>: [],
+<span class="regexp">//</span> Set <span class="literal">true</span> <span class="keyword">if</span> you want to exclude packages managed <span class="keyword">by</span> Package Control
+<span class="string">"exclude_from_package_control"</span>: <span class="literal">false</span>,
+<span class="regexp">//</span> Set <span class="literal">false</span> <span class="keyword">if</span> you don<span class="string">'t want to encrypt your configuration
+"encrypt": true,
+// Upload timeout in seconds
+"http_upload_timeout": 120,
+// Download timeout in seconds
+"http_download_timeout": 120,
+// Path to 7zip executable, though Sublimall tries to find it out itself
+"7za_path": "/usr/local/bin/7za",
+ 这里输入压缩软件所在的路径   
+// HTTP proxy to use for HTTP requests. Support for authentication
+// Examples: http://user:password@host:port or http://ip:port
+"http_proxy": ""
+}       </span>
+</code></pre><p> 5: 打开preferences—package setting—sublimall—upload,在sublime text3最下面出现一个输入密码的空白行,输入这个网站的密码.然后打回车.等待压缩和上传就好了<br> 6: </p>
+
       
     </div>
     <footer class="article-footer">
@@ -408,7 +454,7 @@
       <ul>
         
           <li>
-            <a href="/2014/08/07/sublimall_intro/">sublime text3插件同步的插件Sublimall</a>
+            <a href="/2014/08/07/sublimall_intro/">sublime text3配置和插件同步的插件Sublimall</a>
           </li>
         
           <li>
