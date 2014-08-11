@@ -217,13 +217,13 @@
 <li>通过package control安装sublimall插件.</li>
 <li>sublimall会将配置和插件打包发送到这个网站上,用的压缩软件是7zip,因此需要安装7zip.<br>在终端输入:</li>
 </ol>
-<figure class="highlight brew"><figcaption><span>install p7zip```</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">安装完成后,再输入:</div></pre></td></tr></table></figure>
+<figure class="highlight brew"><figcaption><span>install p7zip</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="escape">``</span><span class="escape">`</span></div><div class="line"><span class="label">安装完成后,再输入:</span></div></pre></td></tr></table></figure>
 
 <p>where is 7za</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">安装正常的话,会在终端显示:</div></pre></td></tr></table></figure>
 
 <p>/usr/local/bin/7za</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">5-打开sublimall的setting-users</div></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="bullet">5. </span>打开sublimall的setting-users</div></pre></td></tr></table></figure>
 
 <p>{<br>    ////////////////////////////<br>    //// Sublimall settings ////<br>    ////////////////////////////<br>    “api_root_url”: “<a href="http://sublimall.org" target="_blank" rel="external">http://sublimall.org</a>“,<br>    “api_upload_url”: “/api/upload/“,<br>    “api_retrieve_url”: “/api/retrieve/“,<br>    //上面几行不用管<br>    ///////////////////////<br>    //// User settings ////<br>    ///////////////////////<br>    “email”: “roc100year@gmail.com”,<br>    //这里输入自己注册sublimall网站的邮箱<br>    “api_key”: “xxxxxxxxxxxxxxxxxxxx”,<br>    //这里输入网站账户页面左下角api key给的一串数字和字母<br>    // Paths must be: “Packages/SublimeCodeIntel” or “Installed Packages/Sublimall”<br>    “ignore_packages”: [],<br>    // Set true if you want to exclude packages managed by Package Control<br>    “exclude_from_package_control”: false,<br>    // Set false if you don’t want to encrypt your configuration<br>    “encrypt”: true,<br>    // Upload timeout in seconds<br>    “http_upload_timeout”: 120,<br>    // Download timeout in seconds<br>    “http_download_timeout”: 120,<br>    // Path to 7zip executable, though Sublimall tries to find it out itself<br>    “7za_path”: “/usr/local/bin/7za”,<br>    //这里输入压缩软件所在的路径<br>    // HTTP proxy to use for HTTP requests. Support for authentication<br>    // Examples: <a href="http://user:password@host:port" target="_blank" rel="external">http://user:password@host:port</a> or <a href="http://ip:port" target="_blank" rel="external">http://ip:port</a><br>    “http_proxy”: “”<br>    }<br>```    </p>
 <ol>
