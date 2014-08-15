@@ -141,12 +141,12 @@
 <li>选择打开Security&amp;Privacy,点击左下角的锁标志,输入密码,点选Allow apps download from: Anywhere,                                                并将Put hard disks to sleep when possible和Wake for Ethernet network access的勾选去掉</li>
 </ul>
 <ol>
-<li><p>Mac终端添加 sublime text 3打开方式</p>
-<p> sudo ln -s “/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl” /usr/bin/subl</p>
-</li>
-<li><p>运行Appstore,下载并安装Xcode,运行然后点击agree.然后打开终端,输入</p>
-<p> xcode-select —install</p>
-</li>
+<li><p>Mac终端添加 sublime text 3打开方式,打开终端输入命令:</p>
+<pre><code><span class="built_in">sudo</span> ln <span class="operator">-s</span> <span class="string">"/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl"</span> /usr/bin/subl
+</code></pre></li>
+<li><p>运行Appstore,下载并安装Xcode,运行然后点击agree.然后打开终端,输入命令,用来安装Command Line Tools(命令行工具):</p>
+<pre><code>xcode-<span class="built_in">select</span> <span class="comment">--install</span>
+</code></pre></li>
 </ol>
 
       
