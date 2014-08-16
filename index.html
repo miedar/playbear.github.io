@@ -71,6 +71,59 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-3rd_lib" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/08/17/3rd_lib/" class="article-date">
+  <time datetime="2014-08-16T18:18:39.000Z" itemprop="datePublished">2014 Aug 17</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/编程/">编程</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/08/17/3rd_lib/">Python 2.7第三方库的安装方法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1:_安装PIL或者PILLOW的方法:">1: 安装PIL或者PILLOW的方法:</h2>
+<p>PIL是Python Imaging Library的简写,是Python中最常用的图像处理库.</p>
+<p>如果是MAC 10.9.4系统的话, 用sudo easy_install PIL安装pil可能会出现错误,谷歌搜索的话,很多人都会出现这样那样的问题.</p>
+<p>pillow是pil的替代品,更容易安装.pillow的最新信息可以参考<a href="http://pillow.readthedocs.org/en/latest/" target="_blank" rel="external">这里</a></p>
+<ul>
+<li><p>安装方法:</p>
+<pre><code> <span class="built_in">sudo</span> pip install pillow
+</code></pre></li>
+<li><p>使用方法:在需要import Image,ImageDraw的地方用下面的语句代替</p>
+</li>
+</ul>
+<pre><code>  <span class="keyword">from</span> PIL <span class="keyword">import</span> Image,ImageDraw
+</code></pre><h2 id="2:_待更新">2: 待更新</h2>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://playbear.github.io/2014/08/17/3rd_lib/" data-id="2w6xzm5ewwr1nk7c" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-mac_reinstall" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2014/08/15/mac_reinstall/" class="article-date">
@@ -277,64 +330,6 @@
 
 
   
-    <article id="post-fuck-gfw" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2014/08/08/fuck-gfw/" class="article-date">
-  <time datetime="2014-08-07T17:44:25.000Z" itemprop="datePublished">2014 Aug 8</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/系统/">系统</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/08/08/fuck-gfw/">MAC下面修改hosts和获得最新hosts的方法</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>因为某些原因google搜索经常被屏蔽,但是工作需要经常使用.修改hosts是访问google最方便的方法之一.</p>
-<p>1: MAC下修改hosts的方法,搜索得来的,<br>   在终端输入:</p>
-<pre><code>sudo <span class="regexp">/Applications/</span>TextEdit.app<span class="regexp">/Contents/</span>MacOS<span class="regexp">/TextEdit /</span>etc<span class="regexp">/hosts</span>
-</code></pre><p>2: 获取hosts的几种方法,</p>
-<p>   github大神制作好的的hosts文件,直接拷贝就行了.</p>
-<pre><code>http<span class="variable">s:</span>//github.<span class="keyword">com</span>/txthinking/google-hosts   
-</code></pre><p>   另一位大神制作的hosts,</p>
-<pre><code><span class="symbol">https:</span>/<span class="regexp">/git.oschina.net/kawaiiushio</span><span class="regexp">/misc/raw</span><span class="regexp">/master/hosts</span><span class="regexp">/pc/hosts</span>
-</code></pre><p>   一个大神制作的hosts更新软件,有mac安装版.</p>
-<pre><code>http<span class="variable">s:</span>//code.google.<span class="keyword">com</span>/<span class="keyword">p</span>/huhamhire-hosts/
-</code></pre><p>  或者</p>
-<pre><code> http<span class="variable">s:</span>//github.<span class="keyword">com</span>/huhamhire/huhamhire-hosts/releases
-</code></pre><p>   一个hosts不好用时候,及时更换成另外一个.</p>
-<p>3: 用chrome浏览器的话,在设置里把默认搜索改成:</p>
-<pre><code> http<span class="variable">s:</span>//www.google.<span class="keyword">com</span>/<span class="built_in">search</span>?<span class="keyword">q</span>=%<span class="keyword">s</span>
-</code></pre><p>   并且在浏览器中运行一次:</p>
-<pre><code> http<span class="variable">s:</span>//www.google.<span class="keyword">com</span>/ncr
-</code></pre><p>  防止自动跳转到google.com.hk</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://playbear.github.io/2014/08/08/fuck-gfw/" data-id="7bohnb6y71fr599p" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -348,7 +343,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/系统/">系统</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/语言/">语言</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件/">软件</a><span class="category-list-count">7</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/系统/">系统</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/编程/">编程</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/语言/">语言</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件/">软件</a><span class="category-list-count">7</span></li></ul>
     </div>
   </div>
 
@@ -361,7 +356,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08">August 2014</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07">July 2014</a><span class="archive-list-count">4</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08">August 2014</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07">July 2014</a><span class="archive-list-count">4</span></li></ul>
     </div>
   </div>
 
@@ -371,6 +366,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2014/08/17/3rd_lib/">Python 2.7第三方库的安装方法</a>
+          </li>
         
           <li>
             <a href="/2014/08/15/mac_reinstall/">重新安装MAC后必做的设置步骤</a>
@@ -386,10 +385,6 @@
         
           <li>
             <a href="/2014/08/09/to-be-continue/">测试Markdown语法</a>
-          </li>
-        
-          <li>
-            <a href="/2014/08/08/fuck-gfw/">MAC下面修改hosts和获得最新hosts的方法</a>
           </li>
         
       </ul>
