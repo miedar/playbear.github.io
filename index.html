@@ -71,6 +71,83 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-hexo_install" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/08/18/hexo_install/" class="article-date">
+  <time datetime="2014-08-17T18:12:11.000Z" itemprop="datePublished">2014 Aug 18</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/系统/">系统</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/08/18/hexo_install/">hexo的安装步骤</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-设置git的SSH公钥">1.设置git的SSH公钥</h3>
+<ul>
+<li><p>打开终端,输入命令:</p>
+<pre><code>ssh-keygen -t rsa -<span class="keyword">C</span> <span class="string">"skywater@gmail.com"</span>
+</code></pre></li>
+<li><p>继续输入命令:</p>
+</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> .SSH      </div><div class="line">subl id.rsa.pub</div></pre></td></tr></table></figure>
+
+<p>拷贝SSH公钥到github账户的SSH keys里面.</p>
+<ul>
+<li>输入命令:</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git config --global <span class="literal">user</span>.email <span class="string">"skywater@gmail.com"</span></div><div class="line">git config --global <span class="literal">user</span>.name <span class="string">"playbear"</span></div></pre></td></tr></table></figure>
+
+<h3 id="2-_安装hexo环境,参考官网">2. 安装hexo环境,参考<a href="http://hexo.io/docs/" target="_blank" rel="external">官网</a></h3>
+<ul>
+<li><p>安装node.js,打开终端,输入命令:</p>
+<pre><code>brew <span class="operator"><span class="keyword">install</span> node</span>
+</code></pre></li>
+<li><p>安装nvm,命令:</p>
+<pre><code>curl http<span class="variable">s:</span>//raw.githubusercontent.<span class="keyword">com</span>/creationix/nvm/v0.<span class="number">13.1</span>/install.<span class="keyword">sh</span> | bash
+</code></pre></li>
+<li><p>安装完成后重启终端,然后运行:</p>
+<pre><code>nvm <span class="operator"><span class="keyword">install</span> <span class="number">0.10</span></span>
+</code></pre></li>
+<li><p>安装Hexo:</p>
+<pre><code>npm <span class="operator"><span class="keyword">install</span> -g hexo</span>
+</code></pre></li>
+<li>初始化Hexo:</li>
+</ul>
+<figure class="highlight mkdir"><figcaption><span>playbear.github.io</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> playbear.github.io</div><div class="line">hexo init</div><div class="line">npm install</div><div class="line">hexo g</div><div class="line">hexo d</div></pre></td></tr></table></figure>
+
+<h3 id="3-_常用hexo命令">3. 常用hexo命令</h3>
+<figure class="highlight hexo"><figcaption><span>n "new_file"(之后用mou编辑new_file.md)</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="title">hexo</span> g</div><div class="line">hexo d</div></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://playbear.github.io/2014/08/18/hexo_install/" data-id="9ofjvymgroxbq04a" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-3rd_lib" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2014/08/17/3rd_lib/" class="article-date">
@@ -276,61 +353,6 @@
 
 
   
-    <article id="post-to-be-continue" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2014/08/09/to-be-continue/" class="article-date">
-  <time datetime="2014-08-09T15:41:11.000Z" itemprop="datePublished">2014 Aug 9</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/语言/">语言</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/08/09/to-be-continue/">测试Markdown语法</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="http://ww1.sinaimg.cn/large/4399c9a5gw1ej85x3us3dj20et0iwwg4.jpg" alt="简明语法"></p>
-<h2 id="什么是_Markdown">什么是 Markdown</h2>
-<p>Markdown 是一种方便记忆、书写的纯文本标记语言，用户可以使用这些标记符号以最小的输入代价生成极富表现力的文档<br><strong>粗体</strong><br><em>斜体</em></p>
-<h3 id="单行代码">单行代码</h3>
-<pre><code>http<span class="variable">s:</span>//github.<span class="keyword">com</span>/playbear/playbear.github.io.git
-</code></pre><h3 id="多行代码">多行代码</h3>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">@requires_authorization</div><div class="line">class SomeClass:</div><div class="line">    def __init__(self)</div><div class="line">    pass</div><div class="line"></div><div class="line">if __name__ == '__main__':</div><div class="line">    print 'hello world'</div></pre></td></tr></table></figure>
-
-<p>习书记说的特别好,接下来我补充几点:</p>
-<ul>
-<li>第一点 这里省略一万字</li>
-<li>第二点 这里省略两万字</li>
-<li>第三点 这里省略三万字</li>
-</ul>
-<p>强调    <em>斜体</em>    <strong>粗体</strong><br>链接    <a href="http://playbear.github.com" target="_blank" rel="external">描述</a><br>图片</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://playbear.github.io/2014/08/09/to-be-continue/" data-id="ipabhk7fhdyvooro" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -344,7 +366,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/系统/">系统</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/编程/">编程</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/语言/">语言</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件/">软件</a><span class="category-list-count">7</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/系统/">系统</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/编程/">编程</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/语言/">语言</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件/">软件</a><span class="category-list-count">7</span></li></ul>
     </div>
   </div>
 
@@ -357,7 +379,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08">August 2014</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07">July 2014</a><span class="archive-list-count">4</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08">August 2014</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07">July 2014</a><span class="archive-list-count">4</span></li></ul>
     </div>
   </div>
 
@@ -367,6 +389,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2014/08/18/hexo_install/">hexo的安装步骤</a>
+          </li>
         
           <li>
             <a href="/2014/08/17/3rd_lib/">Python2.7 常用第三方库的安装方法</a>
@@ -382,10 +408,6 @@
         
           <li>
             <a href="/2014/08/11/no-contributions/">contributions不显示在github上</a>
-          </li>
-        
-          <li>
-            <a href="/2014/08/09/to-be-continue/">测试Markdown语法</a>
           </li>
         
       </ul>
