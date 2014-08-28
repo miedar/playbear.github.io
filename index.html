@@ -123,7 +123,7 @@ map(sq, [y <span class="keyword">for</span> y <span class="keyword">in</span> ra
 r = []
 <span class="keyword">for</span> <span class="keyword">each</span> <span class="operator">in</span> <span class="operator">a</span>:
    r.append(<span class="keyword">each</span>+<span class="number">1</span>)
-</code></pre><p>这样的写法时，你会发现自己如果能将「遍历列表，给遇到的每个元素都做某种运算」的过程从一个循环里抽象出来成为一个函数 map，然后用 lambda 表达式将这种运算作为参数传给 map 的话，考虑事情的思维层级会高出一些来，需要顾及的细节也少了一点。Python 之中，类似能用到 lambda 表达式的「高级」函数还有 reduce、filter 等等，很多语言也都有这样的工具（不过这些特性最好不要在 Python 中用太多，[原因详见] ()<a href="http://www.zhihu.com/question/19794855/answer/12987428" target="_blank" rel="external">http://www.zhihu.com/question/19794855/answer/12987428</a>) 的评论部分）。这种能够接受一个函数作为参数的函数叫做「高阶函数」（higher-order function），是来自函数式编程（functional programming）的思想。</p>
+</code></pre><p>这样的写法时，你会发现自己如果能将「遍历列表，给遇到的每个元素都做某种运算」的过程从一个循环里抽象出来成为一个函数 map，然后用 lambda 表达式将这种运算作为参数传给 map 的话，考虑事情的思维层级会高出一些来，需要顾及的细节也少了一点。Python 之中，类似能用到 lambda 表达式的「高级」函数还有 reduce、filter 等等，很多语言也都有这样的工具（不过这些特性最好不要在 Python 中用太多，[原因详见] (<a href="http://www.zhihu.com/question/19794855/answer/12987428" target="_blank" rel="external">http://www.zhihu.com/question/19794855/answer/12987428</a>) 的评论部分）。这种能够接受一个函数作为参数的函数叫做「高阶函数」（higher-order function），是来自函数式编程（functional programming）的思想。</p>
 <p>和其他很多语言相比，Python 的 lambda 限制多多，最严重的当属它只能由一条表达式组成。这个限制主要是为了防止滥用，因为当人们发觉 lambda 很方便，就比较容易滥用，可是用多了会让程序看起来不那么清晰，毕竟每个人对于抽象层级的忍耐 / 理解程度都有所不同。</p>
 
       
