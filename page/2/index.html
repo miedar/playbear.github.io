@@ -71,6 +71,71 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-mac_reinstall" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/08/15/mac_reinstall/" class="article-date">
+  <time datetime="2014-08-15T15:13:55.000Z" itemprop="datePublished">2014 Aug 15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/系统/">系统</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/08/15/mac_reinstall/">重新安装MAC后必做的设置步骤</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>1: 运行RealtekRTL81xx-0_0_90.pkg,安装显卡驱动.</p>
+<p>2: 运行MultiBeast,选择Drivers—Audio—Realtek ALCXXX—Without DST—ALC887/888b Current v100302,安装声卡驱动.</p>
+<p>3: 运行Appstore,升级到10.9.4.</p>
+<p>4: 安装完成,重启. </p>
+<p>5: 点击左上苹果标志,选择打开System Preferences </p>
+<ul>
+<li><p>选择打开Network,选择Ethernet,自动获取ip变成绿色后,点击Apply</p>
+</li>
+<li><p>选择打开Mouse,去掉Scroll direction:natural的勾选,左侧两个速度拉到最大.</p>
+</li>
+<li><p>选择打开Desk&amp;Screen Saver,选择Screen Saver,Start after选择Never</p>
+</li>
+<li><p>选择打开Energy Saver, Computer sleep和Display sleep都拉到Never</p>
+</li>
+<li><p>选择打开Language&amp;Region, 将English拖到首位.</p>
+</li>
+<li><p>选择打开Keyboard,选择Modifier Keys, Option key改成Command, Command key改成Option.                                 选择Shortcuts—Input Sources, 勾选Select the previous input source 并将Spotlight的快捷键勾选去掉</p>
+</li>
+<li><p>选择打开Security&amp;Privacy,点击左下角的锁标志,输入密码,点选Allow apps download from: Anywhere,                                                并将Put hard disks to sleep when possible和Wake for Ethernet network access的勾选去掉</p>
+</li>
+</ul>
+<p>6:  Mac终端添加 sublime text 3打开方式,打开终端输入命令:</p>
+<pre><code>    <span class="built_in">sudo</span> ln <span class="operator">-s</span> <span class="string">"/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl"</span> /usr/bin/subl
+</code></pre><p>7: 运行Appstore,下载并安装Xcode,运行然后点击agree.然后打开终端,输入命令,用来安装Command Line Tools(命令行工具):</p>
+<pre><code>   xcode-<span class="built_in">select</span> <span class="comment">--install</span>
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://playbear.github.io/2014/08/15/mac_reinstall/" data-id="myb8pecwfbtw5m00" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-sublime-plugin-sublime-tmpl" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2014/08/13/sublime-plugin-sublime-tmpl/" class="article-date">
@@ -270,72 +335,9 @@
 
 
   
-    <article id="post-sublimall_intro" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2014/08/07/sublimall_intro/" class="article-date">
-  <time datetime="2014-08-07T12:26:37.000Z" itemprop="datePublished">2014 Aug 7</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/软件/">软件</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/08/07/sublimall_intro/">备份sublime text3个人配置的插件Sublimall</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>最近浏览v2ex网站发现了一款sublime text3的插件,名字叫sublimall,主要作用是备份sublime text3的个人配置.很适合我这样,经常折腾黑苹果,经常格式化硬盘的人.<br>sublimall的网站是<a href="https://sublimall.org" target="_blank" rel="external">https://sublimall.org</a></p>
-<ul>
-<li>点击绿色的sign up for free按钮,输入账号密码等信息后在自己邮箱里面收取验证邮件.</li>
-<li>在自己<a href="https://sublimall.org/account/" target="_blank" rel="external">账号页面</a>,左下角是email和API key信息</li>
-<li>通过package control安装sublimall插件.</li>
-<li>sublimall会将配置和插件打包发送到这个网站上,用的压缩软件是7zip,因此需要安装7zip.</li>
-</ul>
-<p>在终端输入:</p>
-<pre><code>brew <span class="operator"><span class="keyword">install</span> p7zip</span>
-</code></pre><p>安装完成后,再输入:</p>
-<pre><code><span class="keyword">where</span> <span class="keyword">is</span> <span class="number">7</span>za
-</code></pre><p>安装正常的话,会在终端显示:</p>
-<pre><code><span class="regexp">/usr/</span>local<span class="regexp">/bin/</span><span class="number">7</span>za
-</code></pre><ul>
-<li>打开sublimall的setting-users</li>
-</ul>
-<figure class="highlight {"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">////////////////////////////</div><div class="line">//// Sublimall settings ////</div><div class="line">////////////////////////////</div><div class="line"><span class="string">"api_root_url"</span>: <span class="string">"http://sublimall.org"</span>,</div><div class="line"><span class="string">"api_upload_url"</span>: <span class="string">"/api/upload/"</span>,</div><div class="line"><span class="string">"api_retrieve_url"</span>: <span class="string">"/api/retrieve/"</span>,</div><div class="line">//上面几行不用管</div><div class="line">///////////////////////</div><div class="line">//// User settings ////</div><div class="line">///////////////////////</div><div class="line"><span class="string">"email"</span>: <span class="string">"roc100year@gmail.com"</span>,</div><div class="line">//这里输入自己注册sublimall网站的邮箱</div><div class="line"><span class="string">"api_key"</span>: <span class="string">"xxxxxxxxxxxxxxxxxxxx"</span>,</div><div class="line">//这里输入网站账户页面左下角api key给的一串数字和字母</div><div class="line">// Paths must be: <span class="string">"Packages/SublimeCodeIntel"</span> <span class="keyword">or</span> <span class="string">"Installed Packages/Sublimall"</span></div><div class="line"><span class="string">"ignore_packages"</span>: [],</div><div class="line">// Set true <span class="keyword">if</span> you want <span class="keyword">to</span> exclude packages managed by <span class="keyword">Package</span> Control</div><div class="line"><span class="string">"exclude_from_package_control"</span>: false,</div><div class="line">// Set false <span class="keyword">if</span> you don<span class="attribute">'t</span> want <span class="keyword">to</span> encrypt your <span class="keyword">configuration</span></div><div class="line"><span class="string">"encrypt"</span>: true,</div><div class="line">// Upload timeout <span class="keyword">in</span> seconds</div><div class="line"><span class="string">"http_upload_timeout"</span>: <span class="number">120</span>,</div><div class="line">// Download timeout <span class="keyword">in</span> seconds</div><div class="line"><span class="string">"http_download_timeout"</span>: <span class="number">120</span>,</div><div class="line">// Path <span class="keyword">to</span> <span class="number">7</span>zip executable, though Sublimall tries <span class="keyword">to</span> find it <span class="keyword">out</span> itself</div><div class="line"><span class="string">"7za_path"</span>: <span class="string">"/usr/local/bin/7za"</span>,</div><div class="line">//这里输入压缩软件所在的路径   </div><div class="line">// HTTP proxy <span class="keyword">to</span> <span class="keyword">use</span> <span class="keyword">for</span> HTTP requests. Support <span class="keyword">for</span> authentication</div><div class="line">// Examples: http://user:password@host:<span class="keyword">port</span> <span class="keyword">or</span> http://ip:<span class="keyword">port</span></div><div class="line"><span class="string">"http_proxy"</span>: <span class="string">""</span></div><div class="line">}</div></pre></td></tr></table></figure>
-
-
-<ul>
-<li>打开preferences—package setting—sublimall—upload有一个压缩密码的空白行出现,输入压缩包的密码或者直接打回车.等待压缩和上传就好了.</li>
-<li>sublimall—retrieve 是取回备份的个人配置.</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://playbear.github.io/2014/08/07/sublimall_intro/" data-id="g9o5okeyawqg5diz" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
     </nav>
   
 </section>
@@ -346,7 +348,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/知乎python/">知乎python</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/系统/">系统</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/编程/">编程</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/语言/">语言</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件/">软件</a><span class="category-list-count">7</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/python笔记/">python笔记</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/知乎python/">知乎python</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/系统/">系统</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/编程/">编程</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/语言/">语言</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件/">软件</a><span class="category-list-count">7</span></li></ul>
     </div>
   </div>
 
@@ -359,7 +361,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08">August 2014</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07">July 2014</a><span class="archive-list-count">4</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08">August 2014</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07">July 2014</a><span class="archive-list-count">4</span></li></ul>
     </div>
   </div>
 
@@ -369,6 +371,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2014/08/31/Algorithm_python/">用python实现冒泡排序和选择排序</a>
+          </li>
         
           <li>
             <a href="/2014/08/28/zhihu_python/">(no title)</a>
@@ -384,10 +390,6 @@
         
           <li>
             <a href="/2014/08/17/3rd_lib/">Python2.7 常用第三方库的安装方法</a>
-          </li>
-        
-          <li>
-            <a href="/2014/08/15/mac_reinstall/">重新安装MAC后必做的设置步骤</a>
           </li>
         
       </ul>
