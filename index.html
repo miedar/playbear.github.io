@@ -233,10 +233,9 @@ r = []
 <li>S.isupper() #S中的字母是否全是大写</li>
 <li>S.islower() #S中的字母是否全是小写</li>
 </ul>
-<ul>
+</li>
 <li><h3 id="在collections模块中有一个Counter类">在collections模块中有一个Counter类</h3>
- Counter类的目的是用来跟踪值出现的次数。它是一个无序的容器类型，以字典的键值对形式存储，其中元素作为key，其计数作为value。计数值可以是任意的Interger（包括0和负数）。<br> 例如:统计一个字符串中重复字母的在字母表最先出现的字符</li>
-</ul>
+<p>   Counter类的目的是用来跟踪值出现的次数。它是一个无序的容器类型，以字典的键值对形式存储，其中元素作为key，其计数作为value。计数值可以是任意的Interger（包括0和负数）。<br>   例如:统计一个字符串中重复字母的在字母表最先出现的字符</p>
 </li>
 </ul>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> Counter</div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">checkio</span><span class="params">(text)</span>:</span></div><div class="line">    count = Counter([x <span class="keyword">for</span> x <span class="keyword">in</span> text.lower() <span class="keyword">if</span> x.isalpha()])</div><div class="line">    m = max(count.values())</div><div class="line">    <span class="keyword">return</span> sorted([x <span class="keyword">for</span> (x, y) <span class="keyword">in</span> count.items() <span class="keyword">if</span> y == m])[<span class="number">0</span>]</div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</div><div class="line">    print(checkio(<span class="string">"Hello World!"</span>))</div><div class="line">    print(checkio(<span class="string">"How do you do?"</span>))</div><div class="line">    print(checkio(<span class="string">u"One"</span>))</div><div class="line">    print(checkio(<span class="string">u"Oops!"</span>))</div></pre></td></tr></table></figure>
