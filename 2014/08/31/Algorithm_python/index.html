@@ -3,26 +3,26 @@
 <head>
   <meta charset="utf-8">
   
-  <title>用python实现冒泡排序和选择排序 | 记录</title>
+  <title>用python实现冒泡排序 选择排序 插入排序 | 记录</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="冒泡法排序
+第一个循环倒序,相邻两个元素比较大小然后交换.第一次将最大的一个逐渐排序到列表最后一个位置.
 
-
-1234567891011121314from __future__ import print_function, unicode_literals, divisionarry = [16, 134, 15, 1, 78, 10, 9]def bubble_sort(arry):    for i in range(len(arry) - 1, 0, -1):        fo">
+1234567891011121314from __future__ import print_function, unicode_literals, divisionarry = [16, 134, 15, 1, 78, 10, 9]def bubble_sort(arry):    f">
 <meta property="og:type" content="article">
-<meta property="og:title" content="用python实现冒泡排序和选择排序">
+<meta property="og:title" content="用python实现冒泡排序 选择排序 插入排序">
 <meta property="og:url" content="http://playbear.github.io/2014/08/31/Algorithm_python/">
 <meta property="og:site_name" content="记录">
 <meta property="og:description" content="冒泡法排序
+第一个循环倒序,相邻两个元素比较大小然后交换.第一次将最大的一个逐渐排序到列表最后一个位置.
 
-
-1234567891011121314from __future__ import print_function, unicode_literals, divisionarry = [16, 134, 15, 1, 78, 10, 9]def bubble_sort(arry):    for i in range(len(arry) - 1, 0, -1):        fo">
+1234567891011121314from __future__ import print_function, unicode_literals, divisionarry = [16, 134, 15, 1, 78, 10, 9]def bubble_sort(arry):    f">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="用python实现冒泡排序和选择排序">
+<meta name="twitter:title" content="用python实现冒泡排序 选择排序 插入排序">
 <meta name="twitter:description" content="冒泡法排序
+第一个循环倒序,相邻两个元素比较大小然后交换.第一次将最大的一个逐渐排序到列表最后一个位置.
 
-
-1234567891011121314from __future__ import print_function, unicode_literals, divisionarry = [16, 134, 15, 1, 78, 10, 9]def bubble_sort(arry):    for i in range(len(arry) - 1, 0, -1):        fo">
+1234567891011121314from __future__ import print_function, unicode_literals, divisionarry = [16, 134, 15, 1, 78, 10, 9]def bubble_sort(arry):    f">
 
   
     <link rel="alternative" href="/" title="记录" type="application/atom+xml">
@@ -96,7 +96,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      用python实现冒泡排序和选择排序
+      用python实现冒泡排序 选择排序 插入排序
     </h1>
   
 
@@ -106,18 +106,27 @@
       
         <ul>
 <li><h3 id="冒泡法排序">冒泡法排序</h3>
-</li>
+第一个循环倒序,相邻两个元素比较大小然后交换.第一次将最大的一个逐渐排序到列表最后一个位置.</li>
 </ul>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> __future__ <span class="keyword">import</span> print_function, unicode_literals, division</div><div class="line"></div><div class="line">arry = [<span class="number">16</span>, <span class="number">134</span>, <span class="number">15</span>, <span class="number">1</span>, <span class="number">78</span>, <span class="number">10</span>, <span class="number">9</span>]</div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">bubble_sort</span><span class="params">(arry)</span>:</span></div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(arry) - <span class="number">1</span>, <span class="number">0</span>, -<span class="number">1</span>):</div><div class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(i):</div><div class="line">            <span class="keyword">if</span> arry[j] &gt; arry[j + <span class="number">1</span>]:</div><div class="line">                arry[j], arry[j + <span class="number">1</span>] = arry[j + <span class="number">1</span>], arry[j]</div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</div><div class="line">    bubble_sort(arry)</div><div class="line">    <span class="keyword">print</span> (arry)</div></pre></td></tr></table></figure>
 
 <pre><code>[<span class="number">1</span>, <span class="number">9</span>, <span class="number">10</span>, <span class="number">15</span>, <span class="number">16</span>, <span class="number">78</span>, <span class="number">134</span>]
 </code></pre><ul>
 <li><h3 id="选择法排序">选择法排序</h3>
-</li>
+第一个元素和后面所有元素对比,找到最小的一个,然后交换.</li>
 </ul>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> __future__ <span class="keyword">import</span> print_function, unicode_literals, division</div><div class="line"></div><div class="line">arry = [<span class="number">16</span>, <span class="number">134</span>, <span class="number">15</span>, <span class="number">1</span>, <span class="number">78</span>, <span class="number">10</span>, <span class="number">9</span>]</div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">select_sort</span><span class="params">(arry)</span>:</span></div><div class="line">    length = len(arry)</div><div class="line"></div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(length - <span class="number">1</span>):</div><div class="line">        sort_index = i</div><div class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(i, length):</div><div class="line">            <span class="keyword">if</span> arry[j] &gt; arry[sort_index]:</div><div class="line">                sort_index = j</div><div class="line">        arry[sort_index], arry[i] = arry[i], arry[sort_index]</div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</div><div class="line">    select_sort(arry)</div><div class="line">    print(arry)</div></pre></td></tr></table></figure>
 
 <pre><code>[<span class="number">1</span>, <span class="number">9</span>, <span class="number">10</span>, <span class="number">15</span>, <span class="number">16</span>, <span class="number">78</span>, <span class="number">134</span>]
+</code></pre><ul>
+<li><h3 id="插入排序">插入排序</h3>
+</li>
+</ul>
+<p>最开始以第一个元素为准,第二个元素与第一个比较,排序.第三个与前两个比较然后排序.以此类推.</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">rom __future__ <span class="keyword">import</span> print_function, unicode_literals, division</div><div class="line"></div><div class="line">arry = [<span class="number">17</span>, <span class="number">23</span>, <span class="number">20</span>, <span class="number">14</span>, <span class="number">12</span>, <span class="number">25</span>, <span class="number">1</span>, <span class="number">20</span>, <span class="number">81</span>, <span class="number">14</span>, <span class="number">11</span>, <span class="number">12</span>]</div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">select_sort</span><span class="params">(arry)</span>:</span></div><div class="line">    length = len(arry)</div><div class="line"></div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(length - <span class="number">1</span>):</div><div class="line">        sort_index = i</div><div class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(i, length):</div><div class="line">            <span class="keyword">if</span> arry[j] &lt; arry[sort_index]:</div><div class="line">                sort_index = j</div><div class="line">        <span class="keyword">if</span> sort_index != i:</div><div class="line">            arry[sort_index], arry[i] = arry[i], arry[sort_index]</div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</div><div class="line">    select_sort(arry)</div><div class="line">    print(arry)</div></pre></td></tr></table></figure>
+
+<p>`</p>
+<pre><code>[<span class="number">1</span>, <span class="number">11</span>, <span class="number">12</span>, <span class="number">12</span>, <span class="number">14</span>, <span class="number">14</span>, <span class="number">17</span>, <span class="number">20</span>, <span class="number">20</span>, <span class="number">23</span>, <span class="number">25</span>, <span class="number">81</span>]
 </code></pre>
       
     </div>
@@ -175,7 +184,7 @@
       <ul>
         
           <li>
-            <a href="/2014/08/31/Algorithm_python/">用python实现冒泡排序和选择排序</a>
+            <a href="/2014/08/31/Algorithm_python/">用python实现冒泡排序 选择排序 插入排序</a>
           </li>
         
           <li>
