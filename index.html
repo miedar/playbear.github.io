@@ -71,6 +71,68 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-time_strftime_fuction" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/09/04/time_strftime_fuction/" class="article-date">
+  <time datetime="2014-09-04T15:33:10.000Z" itemprop="datePublished">2014 Sep 4</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/python笔记/">python笔记</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/09/04/time_strftime_fuction/">time.strftime()用法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>参考 <a href="http://www.w3cschool.cc/python/att-time-strftime.html" target="_blank" rel="external">链接</a> 和 <a href="https://github.com/qiwsir/ITArticles/blob/master/Python/%E8%8E%B7%E5%8F%96%E6%97%B6%E9%97%B4%E7%9A%84%E6%96%B9%E6%B3%95.md" target="_blank" rel="external">链接</a></p>
+<h3 id="描述">描述</h3>
+<p>Python time strftime() 函数接收以时间元组，并返回以可读字符串表示的当地时间，格式由参数format决定。</p>
+<h3 id="语法">语法</h3>
+<p>strftime()方法语法：</p>
+<pre><code><span class="built_in">time</span>.strftime(<span class="built_in">format</span>[, t])
+</code></pre><h3 id="说明">说明</h3>
+<p>python中时间日期格式化符号：</p>
+<p>%y 两位数的年份表示（00-99）<br>%Y 四位数的年份表示（000-9999）<br>%m 月份（01-12）<br>%d 月内中的一天（0-31）<br>%H 24小时制小时数（0-23）<br>%I 12小时制小时数（01-12）<br>%M 分钟数（00=59）<br>%S 秒（00-59）<br>%a 本地简化星期名称<br>%A 本地完整星期名称<br>%b 本地简化的月份名称<br>%B 本地完整的月份名称<br>%c 本地相应的日期表示和时间表示<br>%j 年内的一天（001-366）<br>%p 本地A.M.或P.M.的等价符<br>%U 一年中的星期数（00-53）星期天为星期的开始<br>%w 星期（0-6），星期天为星期的开始<br>%W 一年中的星期数（00-53）星期一为星期的开始<br>%x 本地相应的日期表示<br>%X 本地相应的时间表示<br>%Z 当前时区的名称<br>%% %号本身</p>
+<h3 id="实例">实例</h3>
+<ul>
+<li><h3 id="获取时间的方法">获取时间的方法</h3>
+</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt;import time</div><div class="line">&gt;&gt;&gt;this_time=time.localtime()</div><div class="line">&gt;&gt;&gt; this_time</div><div class="line">time.struct_time(tm_year=<span class="number">2013</span>, tm_mon=<span class="number">6</span>, tm_mday=<span class="number">6</span>, tm_hour=<span class="number">13</span>, tm_min=<span class="number">42</span>, tm_sec=<span class="number">38</span>, tm_wday=<span class="number">3</span>, tm_yday=<span class="number">157</span>, tm_isdst=<span class="number">0</span>)</div><div class="line">&gt;&gt;&gt; type(this_time)</div><div class="line">&lt;type <span class="string">'time.struct_time'</span>&gt;</div><div class="line"></div><div class="line">&gt;&gt;&gt; this_year=this_time[<span class="number">0</span>]</div><div class="line">&gt;&gt;&gt; this_year</div><div class="line"><span class="number">2013</span></div><div class="line">&gt;&gt;&gt; <span class="keyword">for</span> time <span class="keyword">in</span> this_time:</div><div class="line"><span class="keyword">...</span>     print time</div><div class="line"><span class="keyword">...</span></div><div class="line"><span class="number">2013</span></div><div class="line"><span class="number">6</span></div><div class="line"><span class="number">6</span></div><div class="line"><span class="number">13</span></div><div class="line"><span class="number">42</span></div><div class="line"><span class="number">38</span></div><div class="line"><span class="number">3</span></div><div class="line"><span class="number">157</span></div><div class="line"><span class="number">0</span></div><div class="line"></div><div class="line">time.strftime(<span class="string">'%Y-%m-%d %T'</span>,time.localtime(time.time())</div><div class="line"> <span class="comment"># 2014-09-04 23:42:34</span></div></pre></td></tr></table></figure>
+
+<ul>
+<li><h3 id="取过去具体时间的方法:">取过去具体时间的方法:</h3>
+</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">import <span class="keyword">time</span></div><div class="line"></div><div class="line"> <span class="comment">#取一天前的当前具体时间</span></div><div class="line"><span class="keyword">time</span>.strftime(<span class="string">'%Y-%m-%d %T'</span>,<span class="keyword">time</span>.<span class="keyword">localtime</span>(<span class="keyword">time</span>.<span class="keyword">time</span>()-<span class="number">24</span>*<span class="number">60</span>*<span class="number">60</span>))</div><div class="line"></div><div class="line"> <span class="comment">#取20天前的当前具体时间</span></div><div class="line"><span class="keyword">time</span>.strftime(<span class="string">'%Y-%m-%d %T'</span>,<span class="keyword">time</span>.<span class="keyword">localtime</span>(<span class="keyword">time</span>.<span class="keyword">time</span>()-<span class="number">20</span>*<span class="number">24</span>*<span class="number">60</span>*<span class="number">60</span>))</div><div class="line"></div><div class="line"> <span class="comment">#取20天前当前具体时间的前2小时</span></div><div class="line"><span class="keyword">time</span>.strftime(<span class="string">'%Y-%m-%d %T'</span>,<span class="keyword">time</span>.<span class="keyword">localtime</span>(<span class="keyword">time</span>.<span class="keyword">time</span>()-<span class="number">20</span>*<span class="number">24</span>*<span class="number">60</span>*<span class="number">60</span>-<span class="number">2</span>*<span class="number">60</span>*<span class="number">60</span>))</div></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://playbear.github.io/2014/09/04/time_strftime_fuction/" data-id="c3qr7nh13xlwi6n6" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Algorithm_python" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2014/08/31/Algorithm_python/" class="article-date">
@@ -344,60 +406,6 @@ r = []
 
 
   
-    <article id="post-3rd_lib" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2014/08/17/3rd_lib/" class="article-date">
-  <time datetime="2014-08-16T18:18:39.000Z" itemprop="datePublished">2014 Aug 17</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/编程/">编程</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/08/17/3rd_lib/">Python2.7 常用第三方库的安装方法</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="1:_安装PIL或者PILLOW的方法:">1: 安装PIL或者PILLOW的方法:</h2>
-<p>PIL是Python Imaging Library的简写,是Python中最常用的图像处理库.</p>
-<p>如果是MAC 10.9.4系统的话, 用sudo easy_install PIL安装pil可能会出现错误,谷歌搜索的话,很多人都会出现这样那样的问题.</p>
-<p>pillow是pil的替代品,更容易安装.pillow的最新信息可以参考<a href="http://pillow.readthedocs.org/en/latest/" target="_blank" rel="external">这里</a>或者<a href="http://pillow-cn.readthedocs.org/zh_CN/latest/index.html" target="_blank" rel="external">中文文档</a></p>
-<ul>
-<li><p>安装方法:</p>
-<pre><code> brew <span class="operator"><span class="keyword">install</span> libtiff libjpeg webp little-cms2
- sudo pip <span class="keyword">install</span> pillow</span>
-</code></pre></li>
-<li><p>使用方法:在需要import Image,ImageDraw的地方用下面的语句代替</p>
-</li>
-</ul>
-<pre><code>  <span class="keyword">from</span> PIL <span class="keyword">import</span> Image,ImageDraw
-</code></pre><h2 id="2:_待更新">2: 待更新</h2>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://playbear.github.io/2014/08/17/3rd_lib/" data-id="2w6xzm5ewwr1nk7c" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -411,7 +419,7 @@ r = []
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/python笔记/">python笔记</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/知乎python/">知乎python</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/系统/">系统</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/编程/">编程</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/语言/">语言</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件/">软件</a><span class="category-list-count">7</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/python笔记/">python笔记</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/知乎python/">知乎python</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/系统/">系统</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/编程/">编程</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/语言/">语言</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件/">软件</a><span class="category-list-count">7</span></li></ul>
     </div>
   </div>
 
@@ -424,7 +432,7 @@ r = []
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08">August 2014</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07">July 2014</a><span class="archive-list-count">4</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09">September 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08">August 2014</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07">July 2014</a><span class="archive-list-count">4</span></li></ul>
     </div>
   </div>
 
@@ -434,6 +442,10 @@ r = []
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2014/09/04/time_strftime_fuction/">time.strftime()用法</a>
+          </li>
         
           <li>
             <a href="/2014/08/31/Algorithm_python/">用python实现冒泡排序 选择排序 插入排序</a>
@@ -449,10 +461,6 @@ r = []
         
           <li>
             <a href="/2014/08/18/hexo_install/">hexo的安装步骤</a>
-          </li>
-        
-          <li>
-            <a href="/2014/08/17/3rd_lib/">Python2.7 常用第三方库的安装方法</a>
           </li>
         
       </ul>
