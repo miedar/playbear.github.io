@@ -132,7 +132,8 @@ deactivate 退出
 <p>MySQL是目前最流行的开源数据库之一.</p>
 <ul>
 <li><p>安装:</p>
-<pre><code><span class="title">brew</span> intall MySQL
+<pre><code><span class="title">brew</span> intall MySQL <span class="comment">#系统的Mysql</span>
+sudo ARCHFLAGS=-W<span class="built_in">no</span>-<span class="built_in">error</span>=unused-command-line-argument-hard-<span class="built_in">error</span>-in-future pip install mysql-python <span class="comment">#python的MySQL</span>
 </code></pre></li>
 <li><p>使用:</p>
 <pre><code>mysql.server <span class="operator"><span class="keyword">start</span></span>
