@@ -114,7 +114,30 @@
 </li>
 </ul>
 <pre><code>  <span class="keyword">from</span> PIL <span class="keyword">import</span> Image,ImageDraw
-</code></pre><h2 id="2:_待更新">2: 待更新</h2>
+</code></pre><h2 id="2:_安装和使用virtualenv">2: 安装和使用virtualenv</h2>
+<p>virtualenv 用来创建隔离的Python环境。它会创建一个拥有独立安装目录的python环境，该隔离环境不会与其他virtualenv环境共享模块（可选择是否访问全局库目录）。</p>
+<ul>
+<li><p>安装:</p>
+<pre><code>pip <span class="operator"><span class="keyword">install</span> virtualenv</span>
+</code></pre></li>
+<li><p>简单使用:</p>
+<pre><code>mkdir testdir
+<span class="built_in">cd</span> testdir
+virtualenv venv --distribute <span class="comment">#初始化</span>
+. venv/bin/activate 激活
+deactivate 退出
+</code></pre></li>
+</ul>
+<h3 id="3:_MySQL安装">3: MySQL安装</h3>
+<p>MySQL是目前最流行的开源数据库之一.</p>
+<ul>
+<li><p>安装:</p>
+<pre><code><span class="title">brew</span> intall MySQL
+</code></pre></li>
+<li><p>使用:</p>
+<pre><code>mysql.server <span class="operator"><span class="keyword">start</span></span>
+</code></pre></li>
+</ul>
 
       
     </div>
