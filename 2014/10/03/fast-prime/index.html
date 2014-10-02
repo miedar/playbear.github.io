@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>计算素数比较快的方法 | No Water Watch</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="计算素数里面除数最大值用(int(prime ** 0.5) +1) ,最好不要用(prime / 2 + 1).在素数值非常大的时候,这两者差距非常明显.比如104729的开方值:323    除以2的值是52365
+再就是尽量用函数返回Ture Flase的判断,
+例如: 求第10000个素数
+1234567891011121314151617181920prime = 2number = 4">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算素数比较快的方法">
+<meta property="og:url" content="http://playbear.github.io/2014/10/03/fast-prime/">
+<meta property="og:site_name" content="No Water Watch">
+<meta property="og:description" content="计算素数里面除数最大值用(int(prime ** 0.5) +1) ,最好不要用(prime / 2 + 1).在素数值非常大的时候,这两者差距非常明显.比如104729的开方值:323    除以2的值是52365
+再就是尽量用函数返回Ture Flase的判断,
+例如: 求第10000个素数
+1234567891011121314151617181920prime = 2number = 4">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="计算素数比较快的方法">
+<meta name="twitter:description" content="计算素数里面除数最大值用(int(prime ** 0.5) +1) ,最好不要用(prime / 2 + 1).在素数值非常大的时候,这两者差距非常明显.比如104729的开方值:323    除以2的值是52365
+再就是尽量用函数返回Ture Flase的判断,
+例如: 求第10000个素数
+1234567891011121314151617181920prime = 2number = 4">
+
+  
+    <link rel="alternative" href="/" title="No Water Watch" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">No Water Watch</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">开门 查水表 马上</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">首页</a>
+        
+          <a class="main-nav-link" href="/archives">存档</a>
+        
+          <a class="main-nav-link" href="/about">关于</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="http://www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
+          <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="Search">
+          <input type="submit" value="" class="search-form-submit">
+          <input name=tn type=hidden value="bds">
+          <input name=cl type=hidden value="3">
+          <input name=ct type=hidden value="2097152">
+          <input type="hidden" name="si" value="playbear.github.io">
+        </form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-fast-prime" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/10/03/fast-prime/" class="article-date">
+  <time datetime="2014-10-02T17:19:34.000Z" itemprop="datePublished">2014 Oct 3</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/python笔记/">python笔记</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      计算素数比较快的方法
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>计算素数里面除数最大值用(int(prime ** 0.5) +1) ,最好不要用(prime / 2 + 1).在素数值非常大的时候,这两者差距非常明显.<br>比如104729的开方值:323<br>    除以2的值是52365</p>
+<p>再就是尽量用函数返回Ture Flase的判断,</p>
+<p>例如: 求第10000个素数</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">prime = <span class="number">2</span></div><div class="line">number = <span class="number">4</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">is_prime</span><span class="params">(num)</span>:</span></div><div class="line">    <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">2</span>, int((num ** <span class="number">0.5</span>)) + <span class="number">1</span>):</div><div class="line">        <span class="keyword">if</span> num % x == <span class="number">0</span>:</div><div class="line">            <span class="keyword">return</span> <span class="keyword">False</span></div><div class="line">    <span class="keyword">return</span> <span class="keyword">True</span></div><div class="line"></div><div class="line"><span class="keyword">while</span> <span class="number">1</span>:</div><div class="line"></div><div class="line">    <span class="keyword">if</span> is_prime(number):</div><div class="line">        prime += <span class="number">1</span></div><div class="line">    <span class="keyword">if</span> prime == <span class="number">10000</span>:</div><div class="line">        <span class="keyword">break</span></div><div class="line">    number += <span class="number">1</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">print</span> number</div></pre></td></tr></table></figure>
+
+<h3 id="用时0-5秒得出结果:104729">用时0.5秒得出结果:104729</h3>
+<p>如果是</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">prime = <span class="number">2</span></div><div class="line">number = <span class="number">4</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">is_prime</span><span class="params">(num)</span>:</span></div><div class="line">    <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">2</span>, int((num / <span class="number">2</span>)) + <span class="number">1</span>):</div><div class="line">        <span class="keyword">if</span> num % x == <span class="number">0</span>:</div><div class="line">            <span class="keyword">return</span> <span class="keyword">False</span></div><div class="line">    <span class="keyword">return</span> <span class="keyword">True</span></div><div class="line"></div><div class="line"><span class="keyword">while</span> <span class="number">1</span>:</div><div class="line"></div><div class="line">    <span class="keyword">if</span> is_prime(number):</div><div class="line">        prime += <span class="number">1</span></div><div class="line">    <span class="keyword">if</span> prime == <span class="number">10000</span>:</div><div class="line">        <span class="keyword">break</span></div><div class="line">    number += <span class="number">1</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">print</span> number</div></pre></td></tr></table></figure>
+
+<h3 id="用时42秒,得出结果104729">用时42秒,得出结果104729</h3>
+<p>如果是</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">prime = <span class="number">2</span></div><div class="line"><span class="built_in">number</span> = <span class="number">4</span></div><div class="line"></div><div class="line"><span class="keyword">while</span> <span class="number">1</span>:</div><div class="line">    flag = <span class="number">0</span></div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">2</span>, int(<span class="built_in">number</span> ** <span class="number">0.5</span>) + <span class="number">1</span>):</div><div class="line">        <span class="keyword">if</span> <span class="built_in">number</span> % i == <span class="number">0</span>:</div><div class="line">            flag = <span class="number">1</span></div><div class="line">    <span class="keyword">if</span> flag == <span class="number">0</span>:</div><div class="line">        prime += <span class="number">1</span></div><div class="line">    <span class="keyword">if</span> prime == <span class="number">10000</span>:</div><div class="line">        <span class="keyword">break</span></div><div class="line">    <span class="built_in">number</span> += <span class="number">1</span></div><div class="line"></div><div class="line"></div><div class="line">print <span class="built_in">number</span></div></pre></td></tr></table></figure>
+
+<h3 id="用时3-0秒,得出结果104729">用时3.0秒,得出结果104729</h3>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://playbear.github.io/2014/10/03/fast-prime/" data-id="h0weplpmp58rpncm" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2014/09/22/python_tips/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">自己需要记住和时常复习的python要点和小技巧</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/python笔记/">python笔记</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/系统/">系统</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/语言/">语言</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件/">软件</a><span class="category-list-count">7</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">September 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">August 2014</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">July 2014</a><span class="archive-list-count">4</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2014/10/03/fast-prime/">计算素数比较快的方法</a>
+          </li>
+        
+          <li>
+            <a href="/2014/09/22/python_tips/">自己需要记住和时常复习的python要点和小技巧</a>
+          </li>
+        
+          <li>
+            <a href="/2014/09/04/time_strftime_fuction/">time.strftime()用法</a>
+          </li>
+        
+          <li>
+            <a href="/2014/08/31/Algorithm_python/">用python实现冒泡排序 选择排序 插入排序</a>
+          </li>
+        
+          <li>
+            <a href="/2014/08/28/zhihu_python/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Links</h3>
+    <div class="widget">
+      <ul>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2014 ClutchBear<br>
+      Powered by <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a>
+      .
+      Theme by <a href="https://github.com/xiangming/landscape-plus" target="_blank">Landscape+</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">存档</a>
+  
+    <a href="/about" class="mobile-nav-link">关于</a>
+  
+</nav>
+    
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+  </div>
+</body>
+</html>
