@@ -75,6 +75,50 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-no-contributions" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/08/11/no-contributions/" class="article-date">
+  <time datetime="2014-08-11T03:36:01.000Z" itemprop="datePublished">2014 Aug 11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/软件/">软件</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/08/11/no-contributions/">contributions不显示在github上</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近不知道怎么搞的,hexo提交了茫茫多次到github上,但在github账号页面不显示contributions绿点.自己的努力没有显示出来,十分的不爽.<br>尝试各种方法解决,甚至去hexo的github页面提交issues,别人回答我说,hexo提交后就会有contributions显示的.<br>最后发现是.gitconfig不知道被哪个软件修改了,删掉.gitconfig配置文件.<br>再终端重新建立一个就行了:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git config --global <span class="literal">user</span>.name <span class="string">"你的名字"</span></div><div class="line">git config --global <span class="literal">user</span>.email <span class="string">"your_email@youremail.com"</span></div></pre></td></tr></table></figure>
+
+<p>最后转帖一个高手的文章:<a href="http://blog.segmentfault.com/spacewander/1190000000520300" target="_blank" rel="external">什么样的contributions会被Github计算在内？</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://playbear.github.io/2014/08/11/no-contributions/" data-id="m8gnj30ahdggbejq" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-to-be-continue" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2014/08/09/to-be-continue/" class="article-date">
@@ -121,66 +165,6 @@
     </div>
     <footer class="article-footer">
       <a data-url="http://playbear.github.io/2014/08/09/to-be-continue/" data-id="u2hchdk0s22kx719" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-fuck-gfw" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2014/08/08/fuck-gfw/" class="article-date">
-  <time datetime="2014-08-07T17:44:25.000Z" itemprop="datePublished">2014 Aug 8</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/系统/">系统</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/08/08/fuck-gfw/">MAC下面修改hosts和获得最新hosts的方法</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>因为某些原因google搜索经常被屏蔽,但是工作需要经常使用.修改hosts是访问google最方便的方法之一.</p>
-<p>1: MAC下修改hosts的方法,搜索得来的,<br>   在终端输入:</p>
-<pre><code>sudo <span class="regexp">/Applications/</span>TextEdit.app<span class="regexp">/Contents/</span>MacOS<span class="regexp">/TextEdit /</span>etc<span class="regexp">/hosts</span>
-</code></pre><p>2: 获取hosts的几种方法,</p>
-<p>   github大神制作好的的hosts文件,直接拷贝就行了.</p>
-<pre><code>http<span class="variable">s:</span>//github.<span class="keyword">com</span>/zxdrive/imouto.host
-</code></pre><p>   或者</p>
-<pre><code>http<span class="variable">s:</span>//github.<span class="keyword">com</span>/txthinking/google-hosts   
-</code></pre><p>   另一位大神制作的hosts,</p>
-<pre><code><span class="symbol">https:</span>/<span class="regexp">/git.oschina.net/kawaiiushio</span><span class="regexp">/misc/raw</span><span class="regexp">/master/hosts</span><span class="regexp">/pc/hosts</span>
-</code></pre><p>   一个大神制作的hosts更新软件,有mac安装版.</p>
-<pre><code>http<span class="variable">s:</span>//code.google.<span class="keyword">com</span>/<span class="keyword">p</span>/huhamhire-hosts/
-</code></pre><p>  或者</p>
-<pre><code> http<span class="variable">s:</span>//github.<span class="keyword">com</span>/huhamhire/huhamhire-hosts/releases
-</code></pre><p>   一个hosts不好用时候,及时更换成另外一个.</p>
-<p>3: 用chrome浏览器的话,在设置里把默认搜索改成:</p>
-<pre><code> http<span class="variable">s:</span>//www.google.<span class="keyword">com</span>/<span class="built_in">search</span>?<span class="keyword">q</span>=%<span class="keyword">s</span>
-</code></pre><p>   并且在浏览器中运行一次:</p>
-<pre><code> http<span class="variable">s:</span>//www.google.<span class="keyword">com</span>/ncr
-</code></pre><p>  防止自动跳转到google.com.hk</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://playbear.github.io/2014/08/08/fuck-gfw/" data-id="1e30lxcxpvtklkud" class="article-share-link">Share</a>
       
       
     </footer>
@@ -421,7 +405,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">September 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">August 2014</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">July 2014</a><span class="archive-list-count">4</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">September 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">August 2014</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">July 2014</a><span class="archive-list-count">4</span></li></ul>
     </div>
   </div>
 
@@ -431,6 +415,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2014/10/16/fuck-gfw/">MAC下面修改hosts和获得最新hosts的方法</a>
+          </li>
         
           <li>
             <a href="/2014/10/03/fast-prime/">计算素数比较快的方法</a>
@@ -446,10 +434,6 @@
         
           <li>
             <a href="/2014/08/31/Algorithm_python/">用python实现冒泡排序 选择排序 插入排序</a>
-          </li>
-        
-          <li>
-            <a href="/2014/08/28/zhihu_python/">(no title)</a>
           </li>
         
       </ul>

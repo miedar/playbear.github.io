@@ -75,6 +75,64 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-zhihu_python" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/08/28/zhihu_python/" class="article-date">
+  <time datetime="2014-08-28T14:02:35.000Z" itemprop="datePublished">2014 Aug 28</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/python笔记/">python笔记</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li><h3 id="Lambda表达式有何用处？如何使用？原文链接点我">Lambda表达式有何用处？如何使用？<a href="http://www.zhihu.com/question/20125256" target="_blank" rel="external">原文链接点我</a></h3>
+<h3 id="涛吴:">涛吴:</h3>
+<p>简单来说，编程中提到的 lambda 表达式，通常是在需要一个函数，但是又不想费神去命名一个函数的场合下使用，也就是指匿名函数。这一用法跟所谓 λ 演算（题目说明里的维基链接）的关系，有点像原子弹和质能方程的关系，差别其实还是挺大的。</p>
+</li>
+</ul>
+<p>不谈形式化的 λ 演算，只说有实际用途的匿名函数。先举一个普通的 Python 例子：将一个 list 里的每个元素都平方：</p>
+<pre><code><span class="keyword">map</span>( lambda x: x*x, [y <span class="keyword">for</span> y <span class="keyword">in</span> <span class="keyword">range</span>(<span class="number">10</span>)] )
+</code></pre><p>这个写法要好过</p>
+<pre><code><span class="function"><span class="keyword">def</span> <span class="title">sq</span><span class="params">(x)</span>:</span>
+   <span class="keyword">return</span> x * x
+
+map(sq, [y <span class="keyword">for</span> y <span class="keyword">in</span> range(<span class="number">10</span>)])
+</code></pre><p>，因为后者多定义了一个（污染环境的）函数，尤其如果这个函数只会使用一次的话。而且第一种写法实际上更易读，因为那个映射到列表上的函数具体是要做什么，非常一目了然。如果你仔细观察自己的代码，会发现这种场景其实很常见：你在某处就真的只需要一个能做一件事情的函数而已，连它叫什么名字都无关紧要。Lambda 表达式就可以用来做这件事。</p>
+<p>进一步讲，匿名函数本质上就是一个函数，它所抽象出来的东西是一组运算。这是什么意思呢？类比</p>
+<pre><code><span class="attribute">a </span>=<span class="string"> [1, 2, 3]</span>
+</code></pre><p>和</p>
+<pre><code><span class="attribute">f </span>=<span class="string"> lambda x : x + 1</span>
+</code></pre><p>，你会发现，等号右边的东西完全可以脱离等号左边的东西而存在，等号左边的名字只是右边之实体的标识符。如果你能习惯 [1, 2, 3] 单独存在，那么 lambda x : x + 1 也能单独存在其实也就不难理解了，它的意义就是给「某个数加一」这一运算本身。</p>
+<p>现在回头来看 map() 函数，它可以将一个函数映射到一个可枚举类型上面。沿用上面给出的 a 和 f，可以写：<br>map(f, a)<br>也就是将函数 f 依次套用在 a 的每一个元素上面，获得结果 [2, 3, 4]。现在用 lambda 表达式来替换 f，就变成：</p>
+<pre><code><span class="function"><span class="title">map</span><span class="params">( lambda x : x + <span class="number">1</span>, [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>] )</span></span>
+</code></pre><p> 会不会觉得现在很一目了然了？尤其是类比</p>
+<pre><code><span class="operator">a</span> = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]
+r = []
+<span class="keyword">for</span> <span class="keyword">each</span> <span class="operator">in</span> <span class="operator">a</span>:
+   r.append(<span class="keyword">each</span>+<span class="number">1</span>)
+</code></pre><p>这样的写法时，你会发现自己如果能将「遍历列表，给遇到的每个元素都做某种运算」的过程从一个循环里抽象出来成为一个函数 map，然后用 lambda 表达式将这种运算作为参数传给 map 的话，考虑事情的思维层级会高出一些来，需要顾及的细节也少了一点。Python 之中，类似能用到 lambda 表达式的「高级」函数还有 reduce、filter 等等，很多语言也都有这样的工具（不过这些特性最好不要在 Python 中用太多，[原因详见] (<a href="http://www.zhihu.com/question/19794855/answer/12987428" target="_blank" rel="external">http://www.zhihu.com/question/19794855/answer/12987428</a>) 的评论部分）。这种能够接受一个函数作为参数的函数叫做「高阶函数」（higher-order function），是来自函数式编程（functional programming）的思想。</p>
+<p>和其他很多语言相比，Python 的 lambda 限制多多，最严重的当属它只能由一条表达式组成。这个限制主要是为了防止滥用，因为当人们发觉 lambda 很方便，就比较容易滥用，可是用多了会让程序看起来不那么清晰，毕竟每个人对于抽象层级的忍耐 / 理解程度都有所不同。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://playbear.github.io/2014/08/28/zhihu_python/" data-id="skmrguqf19i6gj05" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-hexo_install" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2014/08/18/hexo_install/" class="article-date">
@@ -337,50 +395,6 @@ sudo ARCHFLAGS=-W<span class="built_in">no</span>-<span class="built_in">error</
 
 
   
-    <article id="post-no-contributions" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2014/08/11/no-contributions/" class="article-date">
-  <time datetime="2014-08-11T03:36:01.000Z" itemprop="datePublished">2014 Aug 11</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/软件/">软件</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/08/11/no-contributions/">contributions不显示在github上</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>最近不知道怎么搞的,hexo提交了茫茫多次到github上,但在github账号页面不显示contributions绿点.自己的努力没有显示出来,十分的不爽.<br>尝试各种方法解决,甚至去hexo的github页面提交issues,别人回答我说,hexo提交后就会有contributions显示的.<br>最后发现是.gitconfig不知道被哪个软件修改了,删掉.gitconfig配置文件.<br>再终端重新建立一个就行了:</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git config --global <span class="literal">user</span>.name <span class="string">"你的名字"</span></div><div class="line">git config --global <span class="literal">user</span>.email <span class="string">"your_email@youremail.com"</span></div></pre></td></tr></table></figure>
-
-<p>最后转帖一个高手的文章:<a href="http://blog.segmentfault.com/spacewander/1190000000520300" target="_blank" rel="external">什么样的contributions会被Github计算在内？</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://playbear.github.io/2014/08/11/no-contributions/" data-id="m8gnj30ahdggbejq" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
@@ -407,7 +421,7 @@ sudo ARCHFLAGS=-W<span class="built_in">no</span>-<span class="built_in">error</
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">September 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">August 2014</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">July 2014</a><span class="archive-list-count">4</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">September 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">August 2014</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">July 2014</a><span class="archive-list-count">4</span></li></ul>
     </div>
   </div>
 
@@ -417,6 +431,10 @@ sudo ARCHFLAGS=-W<span class="built_in">no</span>-<span class="built_in">error</
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2014/10/16/fuck-gfw/">MAC下面修改hosts和获得最新hosts的方法</a>
+          </li>
         
           <li>
             <a href="/2014/10/03/fast-prime/">计算素数比较快的方法</a>
@@ -432,10 +450,6 @@ sudo ARCHFLAGS=-W<span class="built_in">no</span>-<span class="built_in">error</
         
           <li>
             <a href="/2014/08/31/Algorithm_python/">用python实现冒泡排序 选择排序 插入排序</a>
-          </li>
-        
-          <li>
-            <a href="/2014/08/28/zhihu_python/">(no title)</a>
           </li>
         
       </ul>
