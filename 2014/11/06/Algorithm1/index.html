@@ -3,17 +3,23 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Category: python笔记 | No Water Watch</title>
+  <title>给定数字N的阶乘N!的末尾有多少个0 | No Water Watch</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="水表有没有啊">
-<meta property="og:type" content="website">
-<meta property="og:title" content="No Water Watch">
-<meta property="og:url" content="http://playbear.github.io/categories/python笔记/">
+  <meta name="description" content="当n到二三十时候,N!已经非常大了,会溢出.肯定不能用直接计算出阶乘的方式来统计0的个数.
+通常用1到n的数字中,每个数字分解出2和5的个数,因为2 * 5 = 10因为2个数非常多,因此只要算出5的个数就可以了
+1234567def zero_num(N):    count = 0    for j in range(1, N + 1):        while j % 5 == 0:">
+<meta property="og:type" content="article">
+<meta property="og:title" content="给定数字N的阶乘N!的末尾有多少个0">
+<meta property="og:url" content="http://playbear.github.io/2014/11/06/Algorithm1/">
 <meta property="og:site_name" content="No Water Watch">
-<meta property="og:description" content="水表有没有啊">
+<meta property="og:description" content="当n到二三十时候,N!已经非常大了,会溢出.肯定不能用直接计算出阶乘的方式来统计0的个数.
+通常用1到n的数字中,每个数字分解出2和5的个数,因为2 * 5 = 10因为2个数非常多,因此只要算出5的个数就可以了
+1234567def zero_num(N):    count = 0    for j in range(1, N + 1):        while j % 5 == 0:">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="No Water Watch">
-<meta name="twitter:description" content="水表有没有啊">
+<meta name="twitter:title" content="给定数字N的阶乘N!的末尾有多少个0">
+<meta name="twitter:description" content="当n到二三十时候,N!已经非常大了,会溢出.肯定不能用直接计算出阶乘的方式来统计0的个数.
+通常用1到n的数字中,每个数字分解出2和5的个数,因为2 * 5 = 10因为2个数非常多,因此只要算出5的个数就可以了
+1234567def zero_num(N):    count = 0    for j in range(1, N + 1):        while j % 5 == 0:">
 
   
     <link rel="alternative" href="/" title="No Water Watch" type="application/atom+xml">
@@ -73,185 +79,69 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2014" class="archive-year">2014</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2014/11/06/changle-python/" class="archive-article-date">
-  <time datetime="2014-11-06T09:01:31.000Z" itemprop="datePublished">Nov 6</time>
+        <section id="main"><article id="post-Algorithm1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/11/06/Algorithm1/" class="article-date">
+  <time datetime="2014-11-06T07:27:30.000Z" itemprop="datePublished">2014 Nov 6</time>
 </a>
-      
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/python笔记/">python笔记</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2014/11/06/changle-python/">挑战Python难题答案汇总</a>
+    <h1 class="article-title" itemprop="name">
+      给定数字N的阶乘N!的末尾有多少个0
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2014/11/06/Algorithm1/" class="archive-article-date">
-  <time datetime="2014-11-06T07:27:30.000Z" itemprop="datePublished">Nov 6</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2014/11/06/Algorithm1/">给定数字N的阶乘N!的末尾有多少个0</a>
-    </h1>
-  
+        <p>当n到二三十时候,N!已经非常大了,会溢出.<br>肯定不能用直接计算出阶乘的方式来统计0的个数.</p>
+<p>通常用1到n的数字中,每个数字分解出2和5的个数,因为2 * 5 = 10<br>因为2个数非常多,因此只要算出5的个数就可以了</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">zero_num</span><span class="params">(N)</span>:</span></div><div class="line">    count = <span class="number">0</span></div><div class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">1</span>, N + <span class="number">1</span>):</div><div class="line">        <span class="keyword">while</span> j % <span class="number">5</span> == <span class="number">0</span>:</div><div class="line">           j /= <span class="number">5</span></div><div class="line">           count += <span class="number">1</span></div><div class="line">    <span class="keyword">return</span> b</div></pre></td></tr></table></figure>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2014/11/06/GCD/" class="archive-article-date">
-  <time datetime="2014-11-05T17:23:31.000Z" itemprop="datePublished">Nov 6</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2014/11/06/GCD/">辗转相除法找最大公约数的python实现</a>
-    </h1>
-  
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2014/10/03/fast-prime/" class="archive-article-date">
-  <time datetime="2014-10-02T17:19:34.000Z" itemprop="datePublished">Oct 3</time>
-</a>
       
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://playbear.github.io/2014/11/06/Algorithm1/" data-id="ihm69lmdkae8ql8u" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2014/10/03/fast-prime/">计算素数比较快的方法</a>
-    </h1>
+    
+<nav id="article-nav">
   
+    <a href="/2014/11/06/changle-python/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          挑战Python难题答案汇总
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/11/06/GCD/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">辗转相除法找最大公约数的python实现</div>
+    </a>
+  
+</nav>
 
-    </header>
-  </div>
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2014/09/22/python_tips/" class="archive-article-date">
-  <time datetime="2014-09-22T15:39:43.000Z" itemprop="datePublished">Sep 22</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2014/09/22/python_tips/">自己需要记住和时常复习的python要点和小技巧</a>
-    </h1>
-  
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2014/09/04/time_strftime_fuction/" class="archive-article-date">
-  <time datetime="2014-09-04T15:33:10.000Z" itemprop="datePublished">Sep 4</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2014/09/04/time_strftime_fuction/">time.strftime()用法</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2014/08/31/Algorithm_python/" class="archive-article-date">
-  <time datetime="2014-08-31T14:14:21.000Z" itemprop="datePublished">Aug 31</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2014/08/31/Algorithm_python/">用python实现冒泡排序 选择排序 插入排序</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2014/08/28/zhihu_python/" class="archive-article-date">
-  <time datetime="2014-08-28T14:02:35.000Z" itemprop="datePublished">Aug 28</time>
-</a>
-      
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2014/08/17/3rd_lib/" class="archive-article-date">
-  <time datetime="2014-08-16T18:18:39.000Z" itemprop="datePublished">Aug 17</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2014/08/17/3rd_lib/">Python2.7 常用第三方库的安装方法</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
 </section>
         
           <aside id="sidebar">
