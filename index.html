@@ -75,6 +75,54 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-netcore-q3" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/11/25/netcore-q3/" class="article-date">
+  <time datetime="2014-11-25T02:37:51.000Z" itemprop="datePublished">2014 Nov 25</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/系统/">系统</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/11/25/netcore-q3/">磊科Q3刷机及SS翻墙总结</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近浏览v2ex发现一款不错的路由器,69元.可以刷机后在路由器里面直接设置shadowsocks翻墙.正好京东有快到期的京券.<br>60元到手.</p>
+<p>折腾了两天,刷坏了一台,当然可能没有全坏.我没有耐心搞了,京东换了一台新的.新的很容易刷好了.</p>
+<h3 id="步骤:">步骤:</h3>
+<h3 id="提示:_Q3刷机过程比较慢,时刻观察ping_192-168-1-1_-t的结果-等ping值稳定后,再进行其他操作-">提示: Q3刷机过程比较慢,时刻观察ping 192.168.1.1 -t的结果.等ping值稳定后,再进行其他操作.</h3>
+<p>1: 用这个帖子(<a href="http://forum.anywlan.com/thread-296096-1-1.html)的提示,下载253w和Q3互刷固件,然后进入192.168.1.1,找到升级固件,刷成253W" target="_blank" rel="external">http://forum.anywlan.com/thread-296096-1-1.html)的提示,下载253w和Q3互刷固件,然后进入192.168.1.1,找到升级固件,刷成253W</a>.</p>
+<p>2: 根据这个帖子(<a href="http://bbs.mydigit.cn/read.php?tid=999884),去http://source.wifihell.com/bwq518/121_20140808/CN/K26RT-N/" target="_blank" rel="external">http://bbs.mydigit.cn/read.php?tid=999884),去http://source.wifihell.com/bwq518/121_20140808/CN/K26RT-N/</a><br>Q3下载tomato-K26-1.28.121-MIPSR2-20140808.Hyzoom.RT_N5x-8M-VPN-IPv6-Max.trx这个固件,然后再235W的升级页面里面升级.</p>
+<p>3: 刷成Tomato bwq518后,登陆192.168.1.1,这里需要注意:磊科Q3默认的登录用户名和密码都是guest,tomato默认的都是:admin.然后在基本设置里面勾选’反转端口顺序’.</p>
+<p>4: 设置SS翻墙,高级设置里面”Tow透明代理”,然后把<a href="https://xcafe.in/" target="_blank" rel="external">黑洞咖啡馆</a>的ss服务器地址和密码填入.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://playbear.github.io/2014/11/25/netcore-q3/" data-id="5kinjh1oj5dsz9x4" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-ios8-1-mini2" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2014/11/21/ios8-1-mini2/" class="article-date">
@@ -315,67 +363,6 @@
 
 
   
-    <article id="post-changle-python" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2014/11/06/changle-python/" class="article-date">
-  <time datetime="2014-11-06T09:01:31.000Z" itemprop="datePublished">2014 Nov 6</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/python笔记/">python笔记</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/11/06/changle-python/">挑战Python难题答案汇总</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>pythontip 网站的挑战python题目中有些很难和需要算法来解出.</p>
-<h4 id="9:给你两个正整数a和b，_输出它们的最大公约数。">9:给你两个正整数a和b， 输出它们的最大公约数。</h4>
-<p>解题思路:用辗转相除法</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> <span class="operator">a</span> &lt; b:</div><div class="line">    <span class="operator">a</span>, b = b, <span class="operator">a</span></div><div class="line"></div><div class="line"><span class="keyword">while</span> b:</div><div class="line">    <span class="operator">a</span>, b = b, <span class="operator">a</span> % b</div><div class="line"></div><div class="line">print <span class="operator">a</span></div></pre></td></tr></table></figure>
-
-<h4 id="11:给你一个正整数列表_L,_如_L=[2,8,3,50],_输出L内所有数字的乘积末尾0的个数,如样例L的结果为2-(提示:不要直接相乘,数字很多,可能溢出)">11:给你一个正整数列表 L, 如 L=[2,8,3,50], 输出L内所有数字的乘积末尾0的个数,如样例L的结果为2.(提示:不要直接相乘,数字很多,可能溢出)</h4>
-<p>思路: 利用每个数字包含2和5的个数来判断,存在一对2 * 5 就是一个0</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">a, b = <span class="number">0</span>, <span class="number">0</span></div><div class="line"><span class="keyword">for</span> <span class="built_in">i</span> in L:</div><div class="line">    <span class="built_in">j</span> = <span class="built_in">i</span></div><div class="line">    <span class="keyword">while</span> <span class="built_in">i</span> <span class="comment">% 2 == 0:</span></div><div class="line">        <span class="built_in">i</span> /= <span class="number">2</span></div><div class="line">        a += <span class="number">1</span></div><div class="line">    <span class="keyword">while</span> <span class="built_in">j</span> <span class="comment">% 5 == 0:</span></div><div class="line">        <span class="built_in">j</span> /= <span class="number">5</span></div><div class="line">        b += <span class="number">1</span></div><div class="line"></div><div class="line">print min(a, b)</div></pre></td></tr></table></figure>
-
-<h4 id="12:给你一个正整数列表_L,_如_L=[2,8,3,50],_判断列表内所有数字乘积的最后一个非零数字的奇偶性,奇数输出1,偶数输出0-_如样例输出应为0">12:给你一个正整数列表 L, 如 L=[2,8,3,50], 判断列表内所有数字乘积的最后一个非零数字的奇偶性,奇数输出1,偶数输出0. 如样例输出应为0</h4>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">a, b = <span class="number">0</span>, <span class="number">0</span></div><div class="line"></div><div class="line"><span class="keyword">for</span> <span class="built_in">i</span> in L:</div><div class="line">    <span class="built_in">j</span> = <span class="built_in">i</span></div><div class="line">    <span class="keyword">while</span> <span class="built_in">i</span> <span class="comment">% 2 == 0:</span></div><div class="line">        <span class="built_in">i</span> /= <span class="number">2</span></div><div class="line">        a += <span class="number">1</span></div><div class="line"></div><div class="line">    <span class="keyword">while</span> <span class="built_in">j</span> <span class="comment">% 5 == 0:</span></div><div class="line">        <span class="built_in">j</span> /= <span class="number">5</span></div><div class="line">        b += <span class="number">1</span></div><div class="line"></div><div class="line"><span class="keyword">if</span> a &gt; b:</div><div class="line">    print <span class="number">0</span></div><div class="line"><span class="keyword">else</span>:</div><div class="line">    print <span class="number">1</span></div></pre></td></tr></table></figure>
-
-<h4 id="13:_光棍们对1总是那么敏感，因此每年的11-11被戏称为光棍节。鄙人光棍几十载，光棍自有光棍的快乐。让我们勇敢面对光棍的身份吧，">13: 光棍们对1总是那么敏感，因此每年的11.11被戏称为光棍节。鄙人光棍几十载，光棍自有光棍的快乐。让我们勇敢面对光棍的身份吧，</h4>
-<h4 id="现在就证明自己：给你一个整数a，数出a在二进制表示下1的个数，并输出。">现在就证明自己：给你一个整数a，数出a在二进制表示下1的个数，并输出。</h4>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">count</span> = <span class="number">0</span></div><div class="line"><span class="keyword">while</span> <span class="variable">a:</span></div><div class="line">    <span class="built_in">count</span> += <span class="keyword">a</span> % <span class="number">2</span></div><div class="line">    <span class="keyword">a</span> /= <span class="number">2</span></div><div class="line"><span class="keyword">print</span> <span class="built_in">count</span></div></pre></td></tr></table></figure>
-
-<h4 id="20:信息加密">20:信息加密</h4>
-<h4 id="给你个小写英文字符串a和一个非负数b(0&lt;=b&lt;26),_将a中的每个小写字符替换成字母表中比它大b的字母。">给你个小写英文字符串a和一个非负数b(0&lt;=b&lt;26), 将a中的每个小写字符替换成字母表中比它大b的字母。</h4>
-<h4 id="这里将字母表的z和a相连，如果超过了z就回到了a。例如a=”cagy”,b=3,_则输出_fdjb">这里将字母表的z和a相连，如果超过了z就回到了a。例如a=”cagy”,b=3, 则输出 fdjb</h4>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">out_string = <span class="string">''</span></div><div class="line"><span class="keyword">for</span> i in a:</div><div class="line">   <span class="keyword">if</span> <span class="keyword">ord</span>(i) + b &lt;= <span class="keyword">ord</span>(<span class="string">'z'</span>):</div><div class="line">        out_string += <span class="keyword">chr</span>(<span class="keyword">ord</span>(i)+b)</div><div class="line">   <span class="keyword">else</span>:</div><div class="line">        out_string += <span class="keyword">chr</span>(<span class="keyword">ord</span>(i)+b-<span class="number">26</span>)</div><div class="line"></div><div class="line"><span class="keyword">print</span> out_string</div></pre></td></tr></table></figure>
-
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://playbear.github.io/2014/11/06/changle-python/" data-id="z72ocvnzxltdk3ju" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -389,7 +376,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/iOS/">iOS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python笔记/">python笔记</a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/系统/">系统</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/语言/">语言</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件/">软件</a><span class="category-list-count">7</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/iOS/">iOS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python笔记/">python笔记</a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/系统/">系统</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/语言/">语言</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件/">软件</a><span class="category-list-count">7</span></li></ul>
     </div>
   </div>
 
@@ -402,7 +389,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">September 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">August 2014</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">July 2014</a><span class="archive-list-count">4</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">September 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">August 2014</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">July 2014</a><span class="archive-list-count">4</span></li></ul>
     </div>
   </div>
 
@@ -412,6 +399,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2014/11/25/netcore-q3/">磊科Q3刷机及SS翻墙总结</a>
+          </li>
         
           <li>
             <a href="/2014/11/21/ios8-1-mini2/">ipad mini2 ios 8.1越狱和广告屏蔽</a>
@@ -427,10 +418,6 @@
         
           <li>
             <a href="/2014/11/08/yosemite-10-10/">YOSEMITE 10.10 安装记录</a>
-          </li>
-        
-          <li>
-            <a href="/2014/11/06/changle-python/">挑战Python难题答案汇总</a>
           </li>
         
       </ul>

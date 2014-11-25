@@ -75,6 +75,67 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-changle-python" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/11/06/changle-python/" class="article-date">
+  <time datetime="2014-11-06T09:01:31.000Z" itemprop="datePublished">2014 Nov 6</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/python笔记/">python笔记</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/11/06/changle-python/">挑战Python难题答案汇总</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>pythontip 网站的挑战python题目中有些很难和需要算法来解出.</p>
+<h4 id="9:给你两个正整数a和b，_输出它们的最大公约数。">9:给你两个正整数a和b， 输出它们的最大公约数。</h4>
+<p>解题思路:用辗转相除法</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> <span class="operator">a</span> &lt; b:</div><div class="line">    <span class="operator">a</span>, b = b, <span class="operator">a</span></div><div class="line"></div><div class="line"><span class="keyword">while</span> b:</div><div class="line">    <span class="operator">a</span>, b = b, <span class="operator">a</span> % b</div><div class="line"></div><div class="line">print <span class="operator">a</span></div></pre></td></tr></table></figure>
+
+<h4 id="11:给你一个正整数列表_L,_如_L=[2,8,3,50],_输出L内所有数字的乘积末尾0的个数,如样例L的结果为2-(提示:不要直接相乘,数字很多,可能溢出)">11:给你一个正整数列表 L, 如 L=[2,8,3,50], 输出L内所有数字的乘积末尾0的个数,如样例L的结果为2.(提示:不要直接相乘,数字很多,可能溢出)</h4>
+<p>思路: 利用每个数字包含2和5的个数来判断,存在一对2 * 5 就是一个0</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">a, b = <span class="number">0</span>, <span class="number">0</span></div><div class="line"><span class="keyword">for</span> <span class="built_in">i</span> in L:</div><div class="line">    <span class="built_in">j</span> = <span class="built_in">i</span></div><div class="line">    <span class="keyword">while</span> <span class="built_in">i</span> <span class="comment">% 2 == 0:</span></div><div class="line">        <span class="built_in">i</span> /= <span class="number">2</span></div><div class="line">        a += <span class="number">1</span></div><div class="line">    <span class="keyword">while</span> <span class="built_in">j</span> <span class="comment">% 5 == 0:</span></div><div class="line">        <span class="built_in">j</span> /= <span class="number">5</span></div><div class="line">        b += <span class="number">1</span></div><div class="line"></div><div class="line">print min(a, b)</div></pre></td></tr></table></figure>
+
+<h4 id="12:给你一个正整数列表_L,_如_L=[2,8,3,50],_判断列表内所有数字乘积的最后一个非零数字的奇偶性,奇数输出1,偶数输出0-_如样例输出应为0">12:给你一个正整数列表 L, 如 L=[2,8,3,50], 判断列表内所有数字乘积的最后一个非零数字的奇偶性,奇数输出1,偶数输出0. 如样例输出应为0</h4>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">a, b = <span class="number">0</span>, <span class="number">0</span></div><div class="line"></div><div class="line"><span class="keyword">for</span> <span class="built_in">i</span> in L:</div><div class="line">    <span class="built_in">j</span> = <span class="built_in">i</span></div><div class="line">    <span class="keyword">while</span> <span class="built_in">i</span> <span class="comment">% 2 == 0:</span></div><div class="line">        <span class="built_in">i</span> /= <span class="number">2</span></div><div class="line">        a += <span class="number">1</span></div><div class="line"></div><div class="line">    <span class="keyword">while</span> <span class="built_in">j</span> <span class="comment">% 5 == 0:</span></div><div class="line">        <span class="built_in">j</span> /= <span class="number">5</span></div><div class="line">        b += <span class="number">1</span></div><div class="line"></div><div class="line"><span class="keyword">if</span> a &gt; b:</div><div class="line">    print <span class="number">0</span></div><div class="line"><span class="keyword">else</span>:</div><div class="line">    print <span class="number">1</span></div></pre></td></tr></table></figure>
+
+<h4 id="13:_光棍们对1总是那么敏感，因此每年的11-11被戏称为光棍节。鄙人光棍几十载，光棍自有光棍的快乐。让我们勇敢面对光棍的身份吧，">13: 光棍们对1总是那么敏感，因此每年的11.11被戏称为光棍节。鄙人光棍几十载，光棍自有光棍的快乐。让我们勇敢面对光棍的身份吧，</h4>
+<h4 id="现在就证明自己：给你一个整数a，数出a在二进制表示下1的个数，并输出。">现在就证明自己：给你一个整数a，数出a在二进制表示下1的个数，并输出。</h4>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">count</span> = <span class="number">0</span></div><div class="line"><span class="keyword">while</span> <span class="variable">a:</span></div><div class="line">    <span class="built_in">count</span> += <span class="keyword">a</span> % <span class="number">2</span></div><div class="line">    <span class="keyword">a</span> /= <span class="number">2</span></div><div class="line"><span class="keyword">print</span> <span class="built_in">count</span></div></pre></td></tr></table></figure>
+
+<h4 id="20:信息加密">20:信息加密</h4>
+<h4 id="给你个小写英文字符串a和一个非负数b(0&lt;=b&lt;26),_将a中的每个小写字符替换成字母表中比它大b的字母。">给你个小写英文字符串a和一个非负数b(0&lt;=b&lt;26), 将a中的每个小写字符替换成字母表中比它大b的字母。</h4>
+<h4 id="这里将字母表的z和a相连，如果超过了z就回到了a。例如a=”cagy”,b=3,_则输出_fdjb">这里将字母表的z和a相连，如果超过了z就回到了a。例如a=”cagy”,b=3, 则输出 fdjb</h4>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">out_string = <span class="string">''</span></div><div class="line"><span class="keyword">for</span> i in a:</div><div class="line">   <span class="keyword">if</span> <span class="keyword">ord</span>(i) + b &lt;= <span class="keyword">ord</span>(<span class="string">'z'</span>):</div><div class="line">        out_string += <span class="keyword">chr</span>(<span class="keyword">ord</span>(i)+b)</div><div class="line">   <span class="keyword">else</span>:</div><div class="line">        out_string += <span class="keyword">chr</span>(<span class="keyword">ord</span>(i)+b-<span class="number">26</span>)</div><div class="line"></div><div class="line"><span class="keyword">print</span> out_string</div></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://playbear.github.io/2014/11/06/changle-python/" data-id="z72ocvnzxltdk3ju" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Algorithm1" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2014/11/06/Algorithm1/" class="article-date">
@@ -324,68 +385,6 @@
 
 
   
-    <article id="post-time_strftime_fuction" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2014/09/04/time_strftime_fuction/" class="article-date">
-  <time datetime="2014-09-04T15:33:10.000Z" itemprop="datePublished">2014 Sep 4</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/python笔记/">python笔记</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/09/04/time_strftime_fuction/">time.strftime()用法</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>参考 <a href="http://www.w3cschool.cc/python/att-time-strftime.html" target="_blank" rel="external">链接</a> 和 <a href="https://github.com/qiwsir/ITArticles/blob/master/Python/%E8%8E%B7%E5%8F%96%E6%97%B6%E9%97%B4%E7%9A%84%E6%96%B9%E6%B3%95.md" target="_blank" rel="external">链接</a></p>
-<h3 id="描述">描述</h3>
-<p>Python time strftime() 函数接收以时间元组，并返回以可读字符串表示的当地时间，格式由参数format决定。</p>
-<h3 id="语法">语法</h3>
-<p>strftime()方法语法：</p>
-<pre><code><span class="built_in">time</span>.strftime(<span class="built_in">format</span>[, t])
-</code></pre><h3 id="说明">说明</h3>
-<p>python中时间日期格式化符号：</p>
-<p>%y 两位数的年份表示（00-99）<br>%Y 四位数的年份表示（000-9999）<br>%m 月份（01-12）<br>%d 月内中的一天（0-31）<br>%H 24小时制小时数（0-23）<br>%I 12小时制小时数（01-12）<br>%M 分钟数（00=59）<br>%S 秒（00-59）<br>%a 本地简化星期名称<br>%A 本地完整星期名称<br>%b 本地简化的月份名称<br>%B 本地完整的月份名称<br>%c 本地相应的日期表示和时间表示<br>%j 年内的一天（001-366）<br>%p 本地A.M.或P.M.的等价符<br>%U 一年中的星期数（00-53）星期天为星期的开始<br>%w 星期（0-6），星期天为星期的开始<br>%W 一年中的星期数（00-53）星期一为星期的开始<br>%x 本地相应的日期表示<br>%X 本地相应的时间表示<br>%Z 当前时区的名称<br>%% %号本身</p>
-<h3 id="实例">实例</h3>
-<ul>
-<li><h3 id="获取时间的方法">获取时间的方法</h3>
-</li>
-</ul>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt;import time</div><div class="line">&gt;&gt;&gt;this_time=time.localtime()</div><div class="line">&gt;&gt;&gt; this_time</div><div class="line">time.struct_time(tm_year=<span class="number">2013</span>, tm_mon=<span class="number">6</span>, tm_mday=<span class="number">6</span>, tm_hour=<span class="number">13</span>, tm_min=<span class="number">42</span>, tm_sec=<span class="number">38</span>, tm_wday=<span class="number">3</span>, tm_yday=<span class="number">157</span>, tm_isdst=<span class="number">0</span>)</div><div class="line">&gt;&gt;&gt; type(this_time)</div><div class="line">&lt;type <span class="string">'time.struct_time'</span>&gt;</div><div class="line"></div><div class="line">&gt;&gt;&gt; this_year=this_time[<span class="number">0</span>]</div><div class="line">&gt;&gt;&gt; this_year</div><div class="line"><span class="number">2013</span></div><div class="line">&gt;&gt;&gt; <span class="keyword">for</span> time <span class="keyword">in</span> this_time:</div><div class="line"><span class="keyword">...</span>     print time</div><div class="line"><span class="keyword">...</span></div><div class="line"><span class="number">2013</span></div><div class="line"><span class="number">6</span></div><div class="line"><span class="number">6</span></div><div class="line"><span class="number">13</span></div><div class="line"><span class="number">42</span></div><div class="line"><span class="number">38</span></div><div class="line"><span class="number">3</span></div><div class="line"><span class="number">157</span></div><div class="line"><span class="number">0</span></div><div class="line"></div><div class="line">time.strftime(<span class="string">'%Y-%m-%d %T'</span>,time.localtime(time.time())</div><div class="line"> <span class="comment"># 2014-09-04 23:42:34</span></div></pre></td></tr></table></figure>
-
-<ul>
-<li><h3 id="取过去具体时间的方法:">取过去具体时间的方法:</h3>
-</li>
-</ul>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">import <span class="keyword">time</span></div><div class="line"></div><div class="line"> <span class="comment">#取一天前的当前具体时间</span></div><div class="line"><span class="keyword">time</span>.strftime(<span class="string">'%Y-%m-%d %T'</span>,<span class="keyword">time</span>.<span class="keyword">localtime</span>(<span class="keyword">time</span>.<span class="keyword">time</span>()-<span class="number">24</span>*<span class="number">60</span>*<span class="number">60</span>))</div><div class="line"></div><div class="line"> <span class="comment">#取20天前的当前具体时间</span></div><div class="line"><span class="keyword">time</span>.strftime(<span class="string">'%Y-%m-%d %T'</span>,<span class="keyword">time</span>.<span class="keyword">localtime</span>(<span class="keyword">time</span>.<span class="keyword">time</span>()-<span class="number">20</span>*<span class="number">24</span>*<span class="number">60</span>*<span class="number">60</span>))</div><div class="line"></div><div class="line"> <span class="comment">#取20天前当前具体时间的前2小时</span></div><div class="line"><span class="keyword">time</span>.strftime(<span class="string">'%Y-%m-%d %T'</span>,<span class="keyword">time</span>.<span class="keyword">localtime</span>(<span class="keyword">time</span>.<span class="keyword">time</span>()-<span class="number">20</span>*<span class="number">24</span>*<span class="number">60</span>*<span class="number">60</span>-<span class="number">2</span>*<span class="number">60</span>*<span class="number">60</span>))</div></pre></td></tr></table></figure>
-
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://playbear.github.io/2014/09/04/time_strftime_fuction/" data-id="18vpjnwv8kkgfzci" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
@@ -399,7 +398,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/iOS/">iOS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python笔记/">python笔记</a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/系统/">系统</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/语言/">语言</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件/">软件</a><span class="category-list-count">7</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/iOS/">iOS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python笔记/">python笔记</a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/系统/">系统</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/语言/">语言</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件/">软件</a><span class="category-list-count">7</span></li></ul>
     </div>
   </div>
 
@@ -412,7 +411,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">September 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">August 2014</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">July 2014</a><span class="archive-list-count">4</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">September 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">August 2014</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">July 2014</a><span class="archive-list-count">4</span></li></ul>
     </div>
   </div>
 
@@ -422,6 +421,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2014/11/25/netcore-q3/">磊科Q3刷机及SS翻墙总结</a>
+          </li>
         
           <li>
             <a href="/2014/11/21/ios8-1-mini2/">ipad mini2 ios 8.1越狱和广告屏蔽</a>
@@ -437,10 +440,6 @@
         
           <li>
             <a href="/2014/11/08/yosemite-10-10/">YOSEMITE 10.10 安装记录</a>
-          </li>
-        
-          <li>
-            <a href="/2014/11/06/changle-python/">挑战Python难题答案汇总</a>
           </li>
         
       </ul>
