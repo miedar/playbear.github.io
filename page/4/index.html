@@ -74,6 +74,88 @@
     <div class="outer">
       <section id="main">
   
+    <article id="post-3rd_lib" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/08/17/3rd_lib/" class="article-date">
+  <time datetime="2014-08-16T18:18:39.000Z" itemprop="datePublished">2014 Aug 17</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/python笔记/">python笔记</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/08/17/3rd_lib/">Python2.7 常用第三方库的安装方法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1:_安装PIL或者PILLOW的方法:">1: 安装PIL或者PILLOW的方法:</h2>
+<p>PIL是Python Imaging Library的简写,是Python中最常用的图像处理库.</p>
+<p>如果是MAC 10.9.4系统的话, 用sudo easy_install PIL安装pil可能会出现错误,谷歌搜索的话,很多人都会出现这样那样的问题.</p>
+<p>pillow是pil的替代品,更容易安装.pillow的最新信息可以参考<a href="http://pillow.readthedocs.org/en/latest/" target="_blank" rel="external">这里</a>或者<a href="http://pillow-cn.readthedocs.org/zh_CN/latest/index.html" target="_blank" rel="external">中文文档</a></p>
+<ul>
+<li><p>安装方法:</p>
+<pre><code> brew <span class="operator"><span class="keyword">install</span> libtiff libjpeg webp little-cms2
+ sudo pip <span class="keyword">install</span> pillow</span>
+</code></pre></li>
+<li><p>使用方法:在需要import Image,ImageDraw的地方用下面的语句代替</p>
+</li>
+</ul>
+<pre><code>  <span class="keyword">from</span> PIL <span class="keyword">import</span> Image,ImageDraw
+</code></pre><h2 id="2:_安装和使用virtualenv">2: 安装和使用virtualenv</h2>
+<p>virtualenv 用来创建隔离的Python环境。它会创建一个拥有独立安装目录的python环境，该隔离环境不会与其他virtualenv环境共享模块（可选择是否访问全局库目录）。</p>
+<ul>
+<li><p>安装:</p>
+<pre><code>pip <span class="operator"><span class="keyword">install</span> virtualenv</span>
+</code></pre></li>
+<li><p>简单使用:</p>
+<pre><code>mkdir testdir
+<span class="built_in">cd</span> testdir
+virtualenv venv --distribute <span class="comment">#初始化</span>
+. venv/bin/activate 激活
+deactivate 退出
+</code></pre></li>
+</ul>
+<h3 id="3:_MySQL安装">3: MySQL安装</h3>
+<p>MySQL是目前最流行的开源数据库之一.</p>
+<ul>
+<li><p>安装:</p>
+<pre><code><span class="title">brew</span> intall MySQL <span class="comment">#系统的Mysql</span>
+sudo ARCHFLAGS=-W<span class="built_in">no</span>-<span class="built_in">error</span>=unused-command-line-argument-hard-<span class="built_in">error</span>-in-future pip install mysql-python <span class="comment">#python的MySQL</span>
+</code></pre></li>
+<li><p>使用:</p>
+<pre><code>mysql.server <span class="operator"><span class="keyword">start</span></span>
+</code></pre></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://playbear.github.io/2014/08/17/3rd_lib/" data-id="tvbjvm6ufd5rwiwd" class="article-share-link" data-share="baidu">Share</a>
+      
+
+      
+
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-mac_reinstall" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2014/08/15/mac_reinstall/" class="article-date">
@@ -296,76 +378,9 @@
 
 
   
-    <article id="post-sublimall_intro" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2014/08/07/sublimall_intro/" class="article-date">
-  <time datetime="2014-08-07T12:26:37.000Z" itemprop="datePublished">2014 Aug 7</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/软件/">软件</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/08/07/sublimall_intro/">备份sublime text3个人配置的插件Sublimall</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>最近浏览v2ex网站发现了一款sublime text3的插件,名字叫sublimall,主要作用是备份sublime text3的个人配置.很适合我这样,经常折腾黑苹果,经常格式化硬盘的人.<br>sublimall的网站是<a href="https://sublimall.org" target="_blank" rel="external">https://sublimall.org</a></p>
-<ul>
-<li>点击绿色的sign up for free按钮,输入账号密码等信息后在自己邮箱里面收取验证邮件.</li>
-<li>在自己<a href="https://sublimall.org/account/" target="_blank" rel="external">账号页面</a>,左下角是email和API key信息</li>
-<li>通过package control安装sublimall插件.</li>
-<li>sublimall会将配置和插件打包发送到这个网站上,用的压缩软件是7zip,因此需要安装7zip.</li>
-</ul>
-<p>在终端输入:</p>
-<pre><code>brew <span class="operator"><span class="keyword">install</span> p7zip</span>
-</code></pre><p>安装完成后,再输入:</p>
-<pre><code><span class="keyword">where</span> <span class="keyword">is</span> <span class="number">7</span>za
-</code></pre><p>安装正常的话,会在终端显示:</p>
-<pre><code><span class="regexp">/usr/</span>local<span class="regexp">/bin/</span><span class="number">7</span>za
-</code></pre><ul>
-<li>打开sublimall的setting-users</li>
-</ul>
-<figure class="highlight {"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">////////////////////////////</div><div class="line">//// Sublimall settings ////</div><div class="line">////////////////////////////</div><div class="line"><span class="string">"api_root_url"</span>: <span class="string">"http://sublimall.org"</span>,</div><div class="line"><span class="string">"api_upload_url"</span>: <span class="string">"/api/upload/"</span>,</div><div class="line"><span class="string">"api_retrieve_url"</span>: <span class="string">"/api/retrieve/"</span>,</div><div class="line">//上面几行不用管</div><div class="line">///////////////////////</div><div class="line">//// User settings ////</div><div class="line">///////////////////////</div><div class="line"><span class="string">"email"</span>: <span class="string">"roc100year@gmail.com"</span>,</div><div class="line">//这里输入自己注册sublimall网站的邮箱</div><div class="line"><span class="string">"api_key"</span>: <span class="string">"xxxxxxxxxxxxxxxxxxxx"</span>,</div><div class="line">//这里输入网站账户页面左下角api key给的一串数字和字母</div><div class="line">// Paths must be: <span class="string">"Packages/SublimeCodeIntel"</span> <span class="keyword">or</span> <span class="string">"Installed Packages/Sublimall"</span></div><div class="line"><span class="string">"ignore_packages"</span>: [],</div><div class="line">// Set true <span class="keyword">if</span> you want <span class="keyword">to</span> exclude packages managed by <span class="keyword">Package</span> Control</div><div class="line"><span class="string">"exclude_from_package_control"</span>: false,</div><div class="line">// Set false <span class="keyword">if</span> you don<span class="attribute">'t</span> want <span class="keyword">to</span> encrypt your <span class="keyword">configuration</span></div><div class="line"><span class="string">"encrypt"</span>: true,</div><div class="line">// Upload timeout <span class="keyword">in</span> seconds</div><div class="line"><span class="string">"http_upload_timeout"</span>: <span class="number">120</span>,</div><div class="line">// Download timeout <span class="keyword">in</span> seconds</div><div class="line"><span class="string">"http_download_timeout"</span>: <span class="number">120</span>,</div><div class="line">// Path <span class="keyword">to</span> <span class="number">7</span>zip executable, though Sublimall tries <span class="keyword">to</span> find it <span class="keyword">out</span> itself</div><div class="line"><span class="string">"7za_path"</span>: <span class="string">"/usr/local/bin/7za"</span>,</div><div class="line">//这里输入压缩软件所在的路径   </div><div class="line">// HTTP proxy <span class="keyword">to</span> <span class="keyword">use</span> <span class="keyword">for</span> HTTP requests. Support <span class="keyword">for</span> authentication</div><div class="line">// Examples: http://user:password@host:<span class="keyword">port</span> <span class="keyword">or</span> http://ip:<span class="keyword">port</span></div><div class="line"><span class="string">"http_proxy"</span>: <span class="string">""</span></div><div class="line">}</div></pre></td></tr></table></figure>
-
-
-<ul>
-<li>打开preferences—package setting—sublimall—upload有一个压缩密码的空白行出现,输入压缩包的密码或者直接打回车.等待压缩和上传就好了.</li>
-<li>sublimall—retrieve 是取回备份的个人配置.</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://playbear.github.io/2014/08/07/sublimall_intro/" data-id="9xgml1e1mfy9zxcu" class="article-share-link" data-share="baidu">Share</a>
-      
-
-      
-
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/5/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/5/">Next &raquo;</a>
     </nav>
   
 </section>
@@ -376,7 +391,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/iOS/">iOS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python笔记/">python笔记</a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/系统/">系统</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/语言/">语言</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件/">软件</a><span class="category-list-count">7</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/iOS/">iOS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python笔记/">python笔记</a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/系统/">系统</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/语言/">语言</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件/">软件</a><span class="category-list-count">7</span></li></ul>
     </div>
   </div>
 
@@ -389,7 +404,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">September 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">August 2014</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">July 2014</a><span class="archive-list-count">4</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">September 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">August 2014</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">July 2014</a><span class="archive-list-count">4</span></li></ul>
     </div>
   </div>
 
@@ -399,6 +414,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2015/02/15/shadowsocks/">shadowsocks科学上网</a>
+          </li>
         
           <li>
             <a href="/2014/11/25/netcore-q3/">磊科Q3刷机及SS翻墙总结</a>
@@ -414,10 +433,6 @@
         
           <li>
             <a href="/2014/11/14/python-challene-2/">21一个挑战题的python解决方法</a>
-          </li>
-        
-          <li>
-            <a href="/2014/11/08/yosemite-10-10/">YOSEMITE 10.10 安装记录</a>
           </li>
         
       </ul>
